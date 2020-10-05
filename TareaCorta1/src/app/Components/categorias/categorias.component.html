@@ -1,1 +1,25 @@
-<h2>Categorias Funciona</h2>
+<div class="col-md-12 user-container">
+    <!--Encabezado Vista-->
+    <h2 style="margin: auto; padding: 10px"> Categorias</h2>
+    <button class="btn btn-danger" style="width:100px; margin: 15px; float:right" [routerLink]="'/gestioncategorias'" > Agregar</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        <!--Division de la Tabla-->
+        <th class="hidden">ID</th>
+        <th>Categoria</th>      
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cat of categorias">
+        <td class="hidden"></td>
+        <!--Informacion Tabla-->
+        <td>{{cat.ID}}</td>
+        <td>{{cat.Categoria}}</td>
+        <td><button class="botoneditar" > Editar</button>
+          <button class="botoneliminar"  style="margin-left: 20px;" > Eliminar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
