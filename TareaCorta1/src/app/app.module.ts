@@ -20,6 +20,7 @@ import { VistaPublico } from './Components/vistapublico/vistapublico.component';
 import { CarritoCompras } from './Components/carritocompras/carritocompras.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
