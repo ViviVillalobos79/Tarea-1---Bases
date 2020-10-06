@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -14,6 +15,12 @@ namespace MongoDB
         public override void handleGETRequest(HttpProcessor p)
         {
 
+
+            MongoCRUD db = new MongoCRUD("FoodGos"); //I doesnt exist then is create
+
+ 
+
+
             if (p.http_url.Equals("/Test.png"))
             {
                 Stream fs = File.Open("../../Test.png", FileMode.Open);
@@ -22,6 +29,20 @@ namespace MongoDB
                 fs.CopyTo(p.outputStream.BaseStream);
                 p.outputStream.BaseStream.Flush();
             }
+
+            if (p.http_url.Equals("/Hola"))
+            {
+                var recs = db.LoadRecordby<Cliente>("Clientes", "Pr", "117480511");
+
+                var recsa = db.LoadRecords<Cliente>("Clientes");
+
+                var json2 = recs.ToJson();
+
+                p.writeSuccess();
+                p.outputStream.WriteLine(json2);
+            }
+
+
 
             Console.WriteLine("request: {0}", p.http_url);
             p.writeSuccess();

@@ -50,5 +50,12 @@ public class MongoCRUD
         collection.DeleteOne(filter);
     }
 
+    public T LoadRecordby<T>(string table, String filtro, String filtro2)
+    {
+        var collection = db.GetCollection<T>(table);
+        var filter = Builders<T>.Filter.Eq(filtro, filtro2);
+        return collection.Find(filter).First();
+    }
+
 }
 
