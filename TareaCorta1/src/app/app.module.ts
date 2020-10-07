@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Administrador } from './Components/administrador/administrador.component'
@@ -18,6 +23,7 @@ import { Login } from './Components/login/login.component';
 import { TramoProductor } from './Components/tramoproductor/tramoproductor.component';
 import { VistaPublico } from './Components/vistapublico/vistapublico.component';
 import { CarritoCompras } from './Components/carritocompras/carritocompras.component';
+import { from } from 'rxjs';
 
 
 
@@ -42,7 +48,12 @@ import { CarritoCompras } from './Components/carritocompras/carritocompras.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

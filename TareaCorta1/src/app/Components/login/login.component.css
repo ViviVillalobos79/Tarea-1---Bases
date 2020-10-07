@@ -1,0 +1,59 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width:500vh ;  
+    background-color: #FFFFFF;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logoContainer{
+    height: 135px;
+    width: 500px;
+    padding-top: 20px;
+}
+
+.cardLogin{
+    height: 540px;
+    width: 500px;
+    padding-right: 50px;
+    background: linear-gradient(180.15deg, #3FC5D8 0.13%, rgba(255, 255, 255, 0) 39.1%), #FFFFFF;
+    border-radius: 16px;
+}
+
+.log{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width:500vh; 
+    padding-top: 100px;
+    padding-left: 50px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    border: 1px;
+    border-radius: 43px;
+    height: 63px;
+    width: 400px;
+    line-height: 16px;
+}
+
+.btn-login{
+    width: 377px;
+    height: 60px;
+    background: #336699;
+    border-radius: 16px;
+    color: #FFFFFF;
+}

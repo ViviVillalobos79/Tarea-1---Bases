@@ -1,8 +1,63 @@
-<header>
-    <h1>TITULO DE LA WEB</h1>
-    <h2>Prueba1: {{prueba}}</h2>
-	<p>
-        <!--Boton para Gestion de Sucrsales-->
-        <button type="button" class="fixed-bottom" class="btn btn-primary" [routerLink]="'/afiliacion'">Afiliacion</button>
-      </p>
+<header class="header">
+  <img class="logoContainer" mat-card-image src="../../../assets/Images/logo.png">
+  <div class="botones">
+    <button mat-button class="btn" [routerLink]="'/gestionprodsclientes'">
+      <h3>
+        Clientes
+      </h3>
+    </button>
+    <button mat-button class="btn" [routerLink]="'/tramoproductor'">
+      <h3>
+        Tramos
+      </h3>
+    </button>
+    <button mat-button class="btn" [routerLink]="'/carritocompras'">
+      <h3>
+        Compras
+      </h3>
+    </button>
+    <button mat-button class="btn" [routerLink]="'/'">
+      <h3>
+        Feedback
+      </h3>
+    </button>
+    <button mat-button class="btnLog" [routerLink]="'/login'">
+      <h3>
+        Log In
+      </h3>
+    </button>
+  </div>
 </header>
+<div class="body">
+
+  <div class="carousel">
+
+    <button mat-flat-button (click)="left()">
+      <img src="../../../assets/Images/Polygon 1.png" />
+    </button>
+
+    <mat-card class="imgs">
+      <img mat-card-image src="{{ img[i] }}"/>
+    </mat-card>
+
+    <button mat-flat-button (click)="right()">
+      <img src="../../../assets/Images/Polygon 2.png" />
+    </button>
+  
+  </div>
+  <div class="dist">
+    <h1>Productores en el distrito</h1>
+    <div class="fila">
+      <div class="map">
+        <img src="../../../assets/Images/image 32.png" />
+      </div>
+      <div class="prod">
+        <h1>Productor 1</h1>
+        <h1>Productor 2</h1>
+        <h1>Productor 3</h1>
+        <h1>Productor 4</h1>
+      </div>
+    </div>
+    
+  </div>
+</div>
