@@ -6,9 +6,10 @@ using System.Collections.Generic;
 
 public class Cliente
 {
+    [BsonId]
+    public Guid Id { get; set; }
     public string Cedula { get; set; }
-    [BsonId] //unic identifier sino se pone uno mongo lo pone automatico
-    public Guid Usuario { get; set; }
+    public string Usuario { get; set; }
     public Nombre_Persona Nombre { get; set; }
     public Direccion direccion { get; set; }
     public DOB dob { get; set; }

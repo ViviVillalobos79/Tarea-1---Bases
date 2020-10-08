@@ -31,7 +31,7 @@ namespace MongoDB
 
             //var recsa = db.LoadRecords<Cliente>("Clientes");
 
-            //var json2 = recs.ToJson();
+            //var json2 = recsa.ToJson();
 
             //foreach (var rec in recsa)
             //{
@@ -45,13 +45,19 @@ namespace MongoDB
             //                                        /////////// EJEMPLO de como insertar 
             //db.InsertRecord("Clientes", new Cliente
             //{
-            //    Cedula = "117480511",
-            //    Nombre = new Nombre_Persona { Primer_Nombre = "Maesly", Apellido1 = "Villalobos", Apellido2 = "Valverde" },
-            //    direccion = new Direccion { Provincia = "San Jose", Canton = "San Jose", Distrito = "Hatillo" },
-            //    dob = new DOB { Dia = "10", Mes = "07", Year = "1999" },
+            //    Cedula = "305000397",
+            //    Usuario = "Nickotronz7",
+            //    Nombre = new Nombre_Persona { Primer_Nombre = "Nickolas", Apellido1 = "Rodriguez", Apellido2 = "Cordero" },
+            //    direccion = new Direccion { Provincia = "Cartago", Canton = "El Guarco", Distrito = "Barrancas" },
+            //    dob = new DOB { Dia = "05", Mes = "02", Year = "1997" },
             //    telefono = "61682819",
+            //    SINPE = "61682819",
             //    pass = "hola123"
             //}); //Lo convierte en JSON y lo mete, pero se llama BSON
+
+
+
+
             Console.ReadLine();
         }
     }
