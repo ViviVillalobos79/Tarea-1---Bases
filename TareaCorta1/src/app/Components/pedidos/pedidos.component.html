@@ -1,1 +1,35 @@
-<h2>Pedidos Funciona</h2>
+<div class="col-md-12 user-container">
+    <!--Encabezado Vista-->
+    <h2 class="encabezado"> Pedidos</h2>
+    <button class="botonvolver" [routerLink]="'/productor'" > Volver</button>
+    <mat-card class = "tp-card">
+        <mat-card-content>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th></th>
+                  <!--Division de la Tabla-->
+                  <th class="hidden">Producto</th> 
+                  <th>Cantidad</th> 
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let prod of productos">
+                  <td class="hidden"></td>
+                  <!--Informacion Tabla-->
+                  <td>{{prod.Producto}}</td>
+                  <td>{{prod.Cantida}}</td>
+                </tr>
+                </tbody>
+            </table>
+           
+            <h6>Comprobante: {{Comprobante}}</h6> 
+            <h6>Dirección: {{Direccion}}</h6> 
+          
+        </mat-card-content>
+        <mat-card-actions>
+           <button class="botoneditar">Entregado</button>
+        </mat-card-actions>
+     </mat-card>
+</div>

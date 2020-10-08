@@ -1,21 +1,23 @@
 <div class="col-md-12 user-container">
     <!--Encabezado Vista-->
     <h2 style="margin: auto; padding: 10px"> Gestion Productos</h2>
-    <button class="btn btn-danger" style="width:100px; margin: 15px; float:right" [routerLink]="'/agregarprods'" > Agregar</button>
-    <mat-card class = "tp-card">
-        <mat-card-content>
-           
-            <h6>Nombre: {{Nombre}}</h6> 
-            <h6>Categoria: {{Categoria}}</h6>
-            <h6>Precio: {{Precio}}</h6>
-            <h6>Venta: {{Venta}}</h6>
-            <h6>Disponibilidad: {{Disponibilidad}}</h6>
-            <h6>Foto: {{Foto}}</h6>   
-          
-        </mat-card-content>
-        <mat-card-actions>
-           <button class="botoneditar">Editar</button>
-           <button class="botoneliminar">Eliminar</button>
-        </mat-card-actions>
-     </mat-card>
-  </div>
+    <button class="btn btn-danger" style="width:100px; margin: 15px; float:right" [routerLink]="'/agregarprods'" > Agregar</button>   
+    <div>
+        <mat-card class = "tp-card">
+            <mat-card-content>
+               
+                <h6>Nombre: {{Nombre}}</h6> 
+                <h6>Categoria: {{Categoria}}</h6>
+                <h6>Precio: {{Precio}}</h6>
+                <h6>Venta: {{Venta}}</h6>
+                <h6>Disponibilidad: {{Disponibilidad}}</h6>
+                <h6>Foto: {{Foto}}</h6>   
+              
+            </mat-card-content>
+            <mat-card-actions>
+               <button class="botoneditar">Editar</button>
+               <button class="botoneliminar">Eliminar</button>
+            </mat-card-actions>
+         </mat-card>
+    </div>
+</div>

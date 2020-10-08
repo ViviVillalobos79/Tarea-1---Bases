@@ -1,1 +1,42 @@
-<h2>Gestion Productores/Clientes Funciona</h2>
+<div class="col-md-12 user-container">
+    <!--Encabezado Vista-->
+    <h2 style="margin: auto; padding: 10px"> Gestion Productores y Clientes</h2>
+    <button class="btn btn-danger" style="width:100px; margin: 15px; float:right" [routerLink]="'/administrador'" > Volver</button>
+    
+    <mat-card class = "tp-card">
+        
+        <mat-card-content>
+            <h6>Nombre: {{Nombre}}</h6> 
+            <h6>Apellidos: {{Apellidos}}</h6>
+            <h6>Cédula: {{Cedula}}</h6>
+            <h6>Dirección: {{Direccion}}</h6>
+            <h6>Fecha Nacimiento: {{FecNac}}</h6>
+            <h6>Telefono: {{Telefono}}</h6>
+            <h6>Sinpe Movil: {{Sinpe}}</h6>
+            <h6>Lugares Entrega: {{LgsEntre}}</h6>  
+            <h6>Categoria: {{Categoria1}}</h6>     
+        </mat-card-content>
+        <mat-card-actions>
+           <button class="botoneditar">Editar</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class = "tp-card">
+
+        <mat-card-content>
+            <h6>Nombre: {{Nombre}}</h6> 
+            <h6>Apellidos: {{Apellidos}}</h6>
+            <h6>Cédula: {{Cedula}}</h6>
+            <h6>Dirección: {{Direccion}}</h6>
+            <h6>Fecha Nacimiento: {{FecNac}}</h6>
+            <h6>Telefono: {{Telefono}}</h6>
+            <h6>Usuario: {{Usuario}}</h6>
+            <h6>Password: {{Password}}</h6>   
+            <h6>Categoria: {{Categoria2}}</h6>   
+          
+        </mat-card-content>
+        <mat-card-actions>
+           <button class="botoneditar">Editar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,17 @@
+.encabezado{
+    margin: auto; 
+    padding: 10px
+}
+
+.botonvolver{
+    width:100px; 
+    margin: 15px; 
+    float:right;
+    background: #336699;
+    border-radius: 10px;
+}
+
+.botoneditar{
+    background: #336699;
+    border-radius: 10px;
+}
