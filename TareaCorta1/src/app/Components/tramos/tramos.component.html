@@ -1,0 +1,16 @@
+<header class="header">
+  <img class="logoContainer" mat-card-image src="../../../assets/Images/logo.png"/>
+  <h1>Tramos</h1>
+</header>
+<body class="tramos">
+    <div *ngFor="let tramo of tramos">
+        <mat-card class="productor">
+            <h2>{{ tramo }} &nbsp;</h2>
+            <button mat-button class="btn" [routerLink]="'/tramoproductor'">
+                <h3>
+                Visitar
+                </h3>
+            </button>
+        </mat-card>
+    </div>
+</body>

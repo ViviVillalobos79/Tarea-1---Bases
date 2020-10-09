@@ -13,13 +13,16 @@ import { Pedidos } from './Components/pedidos/pedidos.component';
 import { AdminAfiliados } from './Components/adminafiliados/adminafiliados.component';
 import { Login } from './Components/login/login.component';
 import { TramoProductor } from './Components/tramoproductor/tramoproductor.component';
-import { VistaPublico } from './Components/vistapublico/vistapublico.component';
+import { VistaPublicoComponent } from './Components/vistapublico/vistapublico.component';
 import { CarritoCompras } from './Components/carritocompras/carritocompras.component';
+import { TramosComponent } from './Components/tramos/tramos.component';
+import { FeedbackComponent } from './Components/feedback/feedback.component';
+import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 
 const routes: Routes = [
 {
   path: 'home',
-  component: VistaPublico
+  component: VistaPublicoComponent
 },
 {
   path:'',
@@ -81,6 +84,18 @@ const routes: Routes = [
 {
   path: 'carritocompras',
   component: CarritoCompras
+},
+{
+  path: 'tramos',
+  component: TramosComponent
+},
+{
+  path: 'feedback',
+  component: FeedbackComponent
+},
+{
+  path: 'comprobante',
+  component: ComprobanteComponent
 }
 
 ];

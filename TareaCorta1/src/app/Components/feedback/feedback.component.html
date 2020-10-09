@@ -1,0 +1,20 @@
+<header class="header">
+    <img class="logoContainer" mat-card-image src="../../../assets/Images/logo.png">
+</header>
+<body>
+    <h1 class="gracias">¡GRACIAS POR REALIZAR UNA COMPRA!</h1>
+    <h2>Por favor agregar feedback al Productor y al Producto</h2>
+    <div class="container">
+        <mat-form-field appearance="outline" class="text" >
+            <textarea matInput  placeholder="Feedback al Productor" [formControl]="feedbackProductor"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="text">
+            <textarea matInput  placeholder="Feedback al Producto" [formControl]="feedbackProducto"></textarea>
+        </mat-form-field>
+        <button mat-button class="btn" [routerLink]="'/home'" >
+            <h3>
+                Guardar
+            </h3> 
+        </button> 
+    </div>
+</body>
