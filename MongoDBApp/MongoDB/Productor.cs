@@ -15,5 +15,5 @@ public class Productor
     public string telefono { get; set; }
     public string SINPE { get; set; }
     public List<Producto> productos { get; set; }
-    public List<Producto> pedidos { get; set; }
+    public List<string> pedidos { get; set; }
 }

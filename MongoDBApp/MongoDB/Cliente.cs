@@ -16,5 +16,6 @@ public class Cliente
     public string telefono { get; set; }
     public string SINPE { get; set; }
     public string pass { get; set; }
+    public List<string> pedidos { get; set; }
 
 }

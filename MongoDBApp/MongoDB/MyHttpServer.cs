@@ -16,7 +16,7 @@ namespace MongoDB
         {
 
 
-            MongoCRUD db = new MongoCRUD("FoodGos"); //I doesnt exist then is create
+            MongoCRUD db = new MongoCRUD("FoodGos"); 
 
             var a = p.http_url;
             var instruccion = "";
@@ -42,7 +42,7 @@ namespace MongoDB
                 i += 1;
             }
 
-            if (instruccion == "ObtenerCedula")
+            if (instruccion == "CedulaCliente")
             {
                 var recs = db.LoadRecords<Cliente>("Clientes");
                 var cliente = new Cliente();
@@ -59,33 +59,60 @@ namespace MongoDB
                 p.outputStream.WriteLine(json);
 
             }
+            if (instruccion == "CedulaProductor")
+            {
+                var recs = db.LoadRecords<Productor>("Productores");
+                var productor = new Productor();
+                foreach (var rec in recs)
+                {
+                    if (rec.Cedula == filtro)
+                    {
+                        productor = rec;
+                    }
+                }
+                var json = productor.ToJson();
+                p.writeSuccess();
+                p.outputStream.WriteLine(json);
+            }
+            if (instruccion == "UsuarioCliente")
+            {
+                var recs = db.LoadRecords<Cliente>("Clientes");
+                var cliente = new Cliente();
+                foreach (var rec in recs)
+                {
+                    if (rec.Usuario == filtro)
+                    {
+                        cliente = rec;
 
-            //if (p.http_url.Equals("/Hola"))
-            //{
-            //    var recs = db.LoadRecordby<Cliente>("Clientes", "Pr", "117480511");
+                    }
+                }
+                var json = cliente.ToJson();
+                p.writeSuccess();
+                p.outputStream.WriteLine(json);
 
-            //    var recsa = db.LoadRecords<Cliente>("Clientes");
+            }
+            if (instruccion == "Distritos")
+            {
+                var recs = db.LoadRecords<Cliente>("Productores");
+                var productor = new Productor();
+                var productores = new List<Productor> { productor };
+                foreach (var rec in recs)
+                {
+                    if (rec.direccion.Distrito == filtro)
+                    {
+                        productores.Add(rec);
 
-               
+                    }
+                }
+                var json = cliente.ToJson();
+                p.writeSuccess();
+                p.outputStream.WriteLine(json);
 
-            //    var json2 = recs.ToJson();
-
-            //    p.writeSuccess();
-            //    p.outputStream.WriteLine(json2);
-            //}
+            }
 
 
 
-            //Console.WriteLine("request: {0}", p.http_url);
-            //p.writeSuccess();
-            //p.outputStream.WriteLine("<html><body><h1>test server</h1>");
-            //p.outputStream.WriteLine("Current Time: " + DateTime.Now.ToString());
-            //p.outputStream.WriteLine("url : {0}", p.http_url);
 
-            //p.outputStream.WriteLine("<form method=post action=/form>");
-            //p.outputStream.WriteLine("<input type=text name=foo value=foovalue>");
-            //p.outputStream.WriteLine("<input type=submit name=bar value=barvalue>");
-            //p.outputStream.WriteLine("</form>");
         }
 
         public override void handlePOSTRequest(HttpProcessor p, StreamReader inputData)
