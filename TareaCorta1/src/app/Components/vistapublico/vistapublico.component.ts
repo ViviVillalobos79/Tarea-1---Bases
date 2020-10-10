@@ -6,7 +6,7 @@ import {Component} from '@angular/core'
     styleUrls: ['./vistapublico.component.css']
 })
 
-export class VistaPublico{
+export class VistaPublicoComponent{
     i=0;
     img=["../../../assets/Images/Image1.png",
             '../../../assets/Images/Image2.png',

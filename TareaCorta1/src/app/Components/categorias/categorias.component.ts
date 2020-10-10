@@ -8,6 +8,8 @@ import {Component} from '@angular/core'
 
 export class Categorias{
 
-    categorias = [{"ID":"1","Categoria":"Verduras"},{"ID":"2","Categoria":"Frutas"},{"ID":"3","Categoria":"Hortalizas"}]
+    categorias = [{"ID":"1","Categoria":"Verduras"},
+                  {"ID":"2","Categoria":"Frutas"},
+                  {"ID":"3","Categoria":"Hortalizas"}]
     
 }

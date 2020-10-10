@@ -1,1 +1,31 @@
-<h2>Administrador Funciona</h2>
+<div class="mainCon">
+    <div class="container">
+        <mat-card class="card">
+            <h1>
+                Administrador
+            </h1>
+        </mat-card>
+    </div>
+    <div class="botones">
+        <button mat-button class="btn" [routerLink]="'/gestionprodsclientes'">
+          <h5>
+            Gestion de Productos
+          </h5>
+        </button>
+        <button mat-button class="btn" [routerLink]="'/categorias'">
+          <h3>
+            Categoria
+          </h3>
+        </button>
+        <button mat-button class="btn" [routerLink]="'/adminafiliados'">
+          <h5>
+            Administrar Afiliacion
+          </h5>
+        </button>
+        <button mat-button class="btn" [routerLink]="'/reportes'">
+          <h3>
+            Reportes
+          </h3>
+        </button>
+    </div>
+</div>

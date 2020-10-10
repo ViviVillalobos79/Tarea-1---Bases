@@ -1,1 +1,29 @@
-<h2>Tramo Productor Funciona</h2>
+<body>
+    <h1>Tramo de Productor X</h1>
+
+    <div class="container">
+        <div class="info">
+            <img class="img" src="../../../assets/Images/image 3.png">
+            <h2>Info de Productor</h2>
+        </div>
+        <div class="lista">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let producto of productos">
+                  <td>{{ producto.Producto }}</td>
+                  <td>{{ producto.Cantidad }}</td>
+                  <td>{{ producto.Precio }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>

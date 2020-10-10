@@ -7,5 +7,11 @@ import {Component} from '@angular/core'
 })
 
 export class TramoProductor{
-    
+    productos = [{"Producto":"Maíz","Cantidad":"123","Precio":"123"},
+                {"Producto":"Papa","Cantidad":"123","Precio":"123"},
+                {"Producto":"Pepino","Cantidad":"123","Precio":"123"},
+                {"Producto":"Pimentón","Cantidad":"123","Precio":"123"},
+                {"Producto":"Tomate","Cantidad":"123","Precio":"123"}]
+
 }
+               
