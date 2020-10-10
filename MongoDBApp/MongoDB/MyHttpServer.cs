@@ -16,6 +16,7 @@ namespace MongoDB
         }
         public override void handleGETRequest(HttpProcessor p)
         {
+            //  localhost:1050/DelCliente/117480511/
 
 
             MongoCRUD db = new MongoCRUD("FoodGos"); 
@@ -162,6 +163,7 @@ namespace MongoDB
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
             }
+            
 
             if (instruccion == "DelCliente")
             {
@@ -191,7 +193,7 @@ namespace MongoDB
                 collection.DeleteOne(filter);
                 p.writeSuccess();
             }
-            if (instruccion == "DelPedido")
+            if (instruccion == "DelCategoria")
             {
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("FoodGos");
@@ -205,6 +207,8 @@ namespace MongoDB
         public override void handlePOSTRequest(HttpProcessor p, StreamReader inputData)
         {
             MongoCRUD db = new MongoCRUD("FoodGos");
+
+        // localhost: 1050 / DelCliente y el body
 
             Console.WriteLine("POST request: {0}", p.http_url);
             string data = inputData.ReadToEnd();
