@@ -6,7 +6,9 @@ using System.Collections.Generic;
 
 public class Categoria
 {
-    public string Id { get; set; }
+    [BsonId]
+    public Guid Id { get; set; }
+    public string IdCategoria { get; set; }
     public string Nombre { get; set; }
 
 }

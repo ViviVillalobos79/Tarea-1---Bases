@@ -14,6 +14,6 @@ public class Productor
     public DOB dob { get; set; }
     public string telefono { get; set; }
     public string SINPE { get; set; }
-    public List<Producto> productos { get; set; }
+    public List<string> productos { get; set; }
     public List<string> pedidos { get; set; }
 }

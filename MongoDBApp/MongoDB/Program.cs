@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,6 +26,18 @@ namespace MongoDB
             thread.Start();
 
 
+            //var b = new DOB
+            //{
+            //    Dia = "10",
+            //    Mes = "07",
+            //    Year = "1999"
+            //};
+            //var jason = b.ToJson();
+            //var h = JsonSerializer.Deserialize<DOB>(jason);
+
+            //Console.WriteLine(h.Year);
+
+
 
             //MongoCRUD db = new MongoCRUD("FoodGos"); //I doesnt exist then is create
 
@@ -44,28 +57,35 @@ namespace MongoDB
             //Console.WriteLine(json2);
 
             //                                        /////////// EJEMPLO de como insertar 
-        //    db.InsertRecord("Clientes", new Cliente
-        //    {
-        //        Cedula = "305000397",
-        //        Usuario = "Nickotronz7",
-        //        Nombre = new Nombre_Persona { Primer_Nombre = "Nickolas", Apellido1 = "Rodriguez", Apellido2 = "Cordero" },
-        //        direccion = new Direccion { Provincia = "Cartago", Canton = "El Guarco", Distrito = "Barrancas" },
-        //        dob = new DOB { Dia = "05", Mes = "02", Year = "1997" },
-        //        telefono = "61682819",
-        //        SINPE = "61682819",
-        //        pass = "hola123",
-        //        pedidos = new List<string>()
-        //            {
-        //                "254864",
-        //                "697319",
-        //                "691634",
-        //                "26868"
-        //            }
+            //    db.InsertRecord("Clientes", new Cliente
+            //    {
+            //        Cedula = "305000397",
+            //        Usuario = "Nickotronz7",
+            //        Nombre = new Nombre_Persona { Primer_Nombre = "Nickolas", Apellido1 = "Rodriguez", Apellido2 = "Cordero" },
+            //        direccion = new Direccion { Provincia = "Cartago", Canton = "El Guarco", Distrito = "Barrancas" },
+            //        dob = new DOB { Dia = "05", Mes = "02", Year = "1997" },
+            //        telefono = "61682819",
+            //        SINPE = "61682819",
+            //        pass = "hola123",
+            //        pedidos = new List<string>()
+            //            {
+            //                "254864",
+            //                "697319",
+            //                "691634",
+            //                "26868"
+            //            }
 
-        //}); //Lo convierte en JSON y lo mete, pero se llama BSON
+            //}); //Lo convierte en JSON y lo mete, pero se llama BSON
 
 
-
+            //var pedidos = new List<string>()
+            //            {
+            //                "254864",
+            //                "697319",
+            //                "691634",
+            //                "26868"
+            //            };
+            //Console.WriteLine(pedidos.ToJson());
 
             Console.ReadLine();
         }

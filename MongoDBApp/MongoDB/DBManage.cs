@@ -85,5 +85,8 @@ public class MongoCRUD
         var filter = Builders<T>.Filter.Eq("Id", id);
         collection.DeleteOne(filter);
     }
+
+
+
 }
 
