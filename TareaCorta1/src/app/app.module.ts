@@ -27,6 +27,8 @@ import { TramosComponent } from './Components/tramos/tramos.component';
 import { FormsModule } from '@angular/forms';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ClientesService } from './clientes.service';
 
 
 
@@ -60,9 +62,10 @@ import { ComprobanteComponent } from './Components/comprobante/comprobante.compo
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClientesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
-import {Component} from '@angular/core'
+import {Component, OnInit} from '@angular/core'
+import {Clientes} from '../../clientes'
+import {ClientesService} from '../../clientes.service'
 
 @Component({
     selector: 'gestionprodsclientes',
@@ -6,7 +8,8 @@ import {Component} from '@angular/core'
     styleUrls: ['./gestionprodsclientes.component.css']
 })
 
-export class GestionProdsClientes{
+export class GestionProdsClientes implements OnInit{
+    
     public Nombre: string;
     public Apellidos: string;
     public Cedula: number;
@@ -19,9 +22,9 @@ export class GestionProdsClientes{
     public Password: string;
     public Categoria1: string;
     public Categoria2: string;
-
-
-    constructor(){
+    
+    clientes: Clientes[];
+    constructor(private clientesService: ClientesService){
         this.Nombre = "Pablo";
         this.Apellidos = "Azofeifa González";
         this.Cedula = 2661515;
@@ -35,4 +38,18 @@ export class GestionProdsClientes{
         this.Categoria1 = "Productor"
         this.Categoria2 = "Cliente"
     }
+
+    ngOnInit(): void {
+        //this.clientesService.getClientes();
+        this.getClientes();
+     }
+     
+     getClientes(){
+         return this.clientesService.getClientes()
+         .subscribe(clientes => 
+            {console.log(clientes); 
+            this.clientes = clientes});
+     }
+
+     
 }

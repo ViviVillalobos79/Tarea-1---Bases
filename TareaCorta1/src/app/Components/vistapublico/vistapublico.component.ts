@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'
+import {Component, OnInit} from '@angular/core'
 
 @Component({
     selector: 'vistapublico',
@@ -14,6 +14,7 @@ export class VistaPublicoComponent{
             '../../../assets/Images/Image6.png',
             '../../../assets/Images/Image30.png']
 
+    
     constructor(){}
     left() {
         if (this.i > 0) {
