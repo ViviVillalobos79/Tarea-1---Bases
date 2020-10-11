@@ -4790,20 +4790,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\viviv\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\Tarea-1---Bases\\MongoDBApp\\MongoDB\\MongoDB.csproj",
+      "projectUniqueName": "V:\\Users\\GitHub\\Tarea-1---Bases\\MongoDBApp\\MongoDB\\MongoDB.csproj",
       "projectName": "MongoDB",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\Tarea-1---Bases\\MongoDBApp\\MongoDB\\MongoDB.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\Tarea-1---Bases\\MongoDBApp\\MongoDB\\obj\\",
+      "projectPath": "V:\\Users\\GitHub\\Tarea-1---Bases\\MongoDBApp\\MongoDB\\MongoDB.csproj",
+      "packagesPath": "C:\\Users\\viviv\\.nuget\\packages\\",
+      "outputPath": "V:\\Users\\GitHub\\Tarea-1---Bases\\MongoDBApp\\MongoDB\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\viviv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

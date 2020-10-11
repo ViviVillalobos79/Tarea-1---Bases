@@ -69,17 +69,16 @@ public class MongoCRUD
         return collection.Find(filter).First();
     }
 
-    [Obsolete]
-    public void UpsertRecord<T>(string table, Guid id, T record) //create or insert depends, si ya existe lo actualiza sino lo crea
-    {
-        var collection = db.GetCollection<T>(table);
-        var result = collection.ReplaceOne(
-            new BsonDocument("_id", id),
-            record,
-            new UpdateOptions { IsUpsert = true });
-    }
-
-    public void DeleteRecord<T>(string table, Guid id, T record)
+    ///<summary>
+    ///Eliminar un dato en específico
+    ///</summary>
+    ///<param name="table">
+    ///Tabla de donde se desea borrar el valor
+    ///</param>
+    ///<param name="id">
+    ///Id único con el cual se busca borrar
+    ///</param>
+    public void DeleteRecord<T>(string table, Guid id)
     {
         var collection = db.GetCollection<T>(table);
         var filter = Builders<T>.Filter.Eq("Id", id);
