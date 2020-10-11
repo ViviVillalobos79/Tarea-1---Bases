@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {Clientes} from '../../clientes'
 import {ClientesService} from '../../clientes.service'
-
+import {Location} from '@angular/common'
 @Component({
     selector: 'gestionprodsclientes',
     templateUrl: './gestionprodsclientes.component.html',
@@ -24,7 +24,8 @@ export class GestionProdsClientes implements OnInit{
     public Categoria2: string;
     
     clientes: Clientes[];
-    constructor(private clientesService: ClientesService){
+    constructor(private clientesService: ClientesService,
+        private location: Location){
         this.Nombre = "Pablo";
         this.Apellidos = "Azofeifa González";
         this.Cedula = 2661515;
@@ -43,8 +44,12 @@ export class GestionProdsClientes implements OnInit{
         //this.clientesService.getClientes();
         this.getClientes();
      }
+     goBack(): void {
+        this.location.back();
+      }
      
      getClientes(){
+         //this.Nombre = Clientes.arguments
          return this.clientesService.getClientes()
          .subscribe(clientes => 
             {console.log(clientes); 
