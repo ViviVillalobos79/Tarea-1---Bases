@@ -8,7 +8,7 @@ public class Categoria
 {
     [BsonId]
     public Guid Id { get; set; }
-    public string IdCategoria { get; set; }
+    public int IdCategoria { get; set; }
     public string Nombre { get; set; }
 
 }

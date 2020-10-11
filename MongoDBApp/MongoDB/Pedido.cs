@@ -10,11 +10,11 @@ namespace MongoDB
     {
         [BsonId]
         public Guid Id { get; set; }
-        public string num_pedido { get; set; }
-        public List<Producto> productos { get; set; }
-        public string num_comprobante { get; set; }
-        public string Cedula_cliente { get; set; }
-        public string entrgeado { get; set; }
+        public int num_pedido { get; set; }
+        public List<int> productos { get; set; }
+        public int num_comprobante { get; set; }
+        public int Cedula_cliente { get; set; }
+        public bool entregado { get; set; }
 
 
     }
