@@ -52,11 +52,12 @@ namespace MongoDB
             //Ejemplo: localhost:1050/CedulaCliente/117480511/
             if (instruccion == "CedulaCliente")
             {
+                var filtro1 = int.Parse(filtro);
                 var recs = db.LoadRecords<Cliente>("Clientes");
                 var cliente = new Cliente();
                 foreach (var rec in recs)
                 {
-                    if(rec.Cedula == filtro)
+                    if(rec.Cedula == filtro1)
                     {
                         cliente = rec;
                         
@@ -72,11 +73,12 @@ namespace MongoDB
             //Ejemplo: localhost:1050/CedulaProductor/117480511/
             if (instruccion == "CedulaProductor")
             {
+                var filtro1 = int.Parse(filtro);
                 var recs = db.LoadRecords<Productor>("Productores");
                 var productor = new Productor();
                 foreach (var rec in recs)
                 {
-                    if (rec.Cedula == filtro)
+                    if (rec.Cedula == filtro1)
                     {
                         productor = rec;
                     }
@@ -110,11 +112,23 @@ namespace MongoDB
             //Ejemplo: localhost:1050/Distritos/117480511/
             if (instruccion == "Distritos")
             {
-                var recs = db.LoadRecords<Productor>("Productores");
-                var productores = new List<Productor> {};
+                var filtro1 = int.Parse(filtro);
+                var recs = db.LoadRecords<Cliente>("Clientes");
+                var cliente = new Cliente();
                 foreach (var rec in recs)
                 {
-                    if (rec.direccion.Distrito == filtro)
+                    if (rec.Cedula == filtro1)
+                    {
+                        cliente = rec;
+
+                    }
+                }
+
+                var recsa = db.LoadRecords<Productor>("Productores");
+                var productores = new List<Productor> {};
+                foreach (var rec in recsa)
+                {
+                    if (rec.direccion == cliente.direccion)
                     {
                         productores.Add(rec);
 
@@ -130,11 +144,12 @@ namespace MongoDB
             //Ejemplo: localhost:1050/PedidosProductor/117480511/
             if (instruccion == "PedidosProductor")
             {
+                var filtro1 = int.Parse(filtro);
                 var recs = db.LoadRecords<Productor>("Productores");
-                var num_pedidos = new List<string> { };
+                var num_pedidos = new List<int> { };
                 foreach (var rec in recs)
                 {
-                    if (rec.Cedula == filtro)
+                    if (rec.Cedula == filtro1)
                     {
                         num_pedidos = rec.pedidos;
                     }
@@ -159,11 +174,12 @@ namespace MongoDB
             //Ejemplo: localhost:1050/PedidosCliente/117480511/
             if (instruccion == "PedidosCliente")
             {
+                var filtro1 = int.Parse(filtro);
                 var recs = db.LoadRecords<Cliente>("Clientes");
-                var num_pedidos = new List<string> { };
+                var num_pedidos = new List<int> { };
                 foreach (var rec in recs)
                 {
-                    if (rec.Cedula == filtro)
+                    if (rec.Cedula == filtro1)
                     {
                         num_pedidos = rec.pedidos;
                     }
@@ -188,10 +204,11 @@ namespace MongoDB
             //Ejemplo: localhost:1050/DelCliente/117480511/
             if (instruccion == "DelCliente")
             {
+                var filtro1 = int.Parse(filtro);
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Cliente>("Clientes");
-                var filter = Builders<Cliente>.Filter.Eq(x => x.Cedula, filtro);
+                var filter = Builders<Cliente>.Filter.Eq(x => x.Cedula, filtro1);
                 collection.DeleteOne(filter);
                 p.writeSuccess();
 
@@ -201,10 +218,11 @@ namespace MongoDB
             //Ejemplo: localhost:1050/DelProductor/117480511/
             if (instruccion == "DelProductor")
             {
+                var filtro1 = int.Parse(filtro);
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Productor>("Productores");
-                var filter = Builders<Productor>.Filter.Eq(x => x.Cedula, filtro);
+                var filter = Builders<Productor>.Filter.Eq(x => x.Cedula, filtro1);
                 collection.DeleteOne(filter);
                 p.writeSuccess();
             }
@@ -213,10 +231,11 @@ namespace MongoDB
             //Ejemplo: localhost:1050/DelPedido/00215/
             if (instruccion == "DelPedido")
             {
+                var filtro1 = int.Parse(filtro);
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Pedido>("Pedidos");
-                var filter = Builders<Pedido>.Filter.Eq(x => x.num_pedido, filtro);
+                var filter = Builders<Pedido>.Filter.Eq(x => x.num_pedido, filtro1);
                 collection.DeleteOne(filter);
                 p.writeSuccess();
             }
@@ -225,10 +244,11 @@ namespace MongoDB
             //Ejemplo: localhost:1050/DelCategoria/00215/
             if (instruccion == "DelCategoria")
             {
+                var filtro1 = int.Parse(filtro);
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Categoria>("Categorias");
-                var filter = Builders<Categoria>.Filter.Eq(x => x.IdCategoria, filtro);
+                var filter = Builders<Categoria>.Filter.Eq(x => x.IdCategoria, filtro1);
                 collection.DeleteOne(filter);
                 p.writeSuccess();
             }

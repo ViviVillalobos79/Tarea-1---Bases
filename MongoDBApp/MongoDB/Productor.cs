@@ -8,12 +8,12 @@ public class Productor
 {
     [BsonId]
     public Guid Id { get; set; }
-    public string Cedula { get; set; }
+    public int Cedula { get; set; }
     public Nombre_Persona Nombre { get; set; }
     public Direccion direccion { get; set; }
     public DOB dob { get; set; }
-    public string telefono { get; set; }
-    public string SINPE { get; set; }
-    public List<string> productos { get; set; }
-    public List<string> pedidos { get; set; }
+    public int telefono { get; set; }
+    public int SINPE { get; set; }
+    public List<int> productos { get; set; }
+    public List<int> pedidos { get; set; }
 }
