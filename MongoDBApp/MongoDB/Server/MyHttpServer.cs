@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.NormalModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -70,7 +71,22 @@ namespace MongoDB
                         
                     }
                 }
-                var json = cliente.ToJson();
+
+
+                var cliente2 = new Cliente2
+                {
+                    Cedula = cliente.Cedula,
+                    Usuario = cliente.Usuario,
+                    Nombre = cliente.Nombre,
+                    direccion = cliente.direccion,
+                    dob = cliente.dob,
+                    telefono = cliente.telefono,
+                    SINPE = cliente.SINPE,
+                    pass = cliente.pass,
+                    pedidos = cliente.pedidos
+                };
+
+                var json = cliente2.ToJson();
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
 
@@ -90,7 +106,20 @@ namespace MongoDB
                         productor = rec;
                     }
                 }
-                var json = productor.ToJson();
+
+                var productor2 = new Productor2
+                {
+                    Cedula = productor.Cedula,
+                    Nombre = productor.Nombre,
+                    direccion = productor.direccion,
+                    dob = productor.dob,
+                    telefono = productor.telefono,
+                    SINPE = productor.SINPE,
+                    productos = productor.productos,
+                    pedidos = productor.pedidos
+                };
+
+                var json = productor2.ToJson();
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
             }
@@ -109,7 +138,21 @@ namespace MongoDB
 
                     }
                 }
-                var json = cliente.ToJson();
+
+                var cliente2 = new Cliente2
+                {
+                    Cedula = cliente.Cedula,
+                    Usuario = cliente.Usuario,
+                    Nombre = cliente.Nombre,
+                    direccion = cliente.direccion,
+                    dob = cliente.dob,
+                    telefono = cliente.telefono,
+                    SINPE = cliente.SINPE,
+                    pass = cliente.pass,
+                    pedidos = cliente.pedidos
+                };
+
+                var json = cliente2.ToJson();
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
 
@@ -133,6 +176,7 @@ namespace MongoDB
 
                 var recsa = db.LoadRecords<Productor>("Productores");
                 var productores = new List<Productor> {};
+                var productores2 = new List<Productor2> { };
                 foreach (var rec in recsa)
                 {
                     if (rec.direccion == cliente.direccion)
@@ -141,7 +185,22 @@ namespace MongoDB
 
                     }
                 }
-                var json = productores.ToJson();
+                foreach (var productor in productores)
+                {
+                    var productor2 = new Productor2
+                    {
+                        Cedula = productor.Cedula,
+                        Nombre = productor.Nombre,
+                        direccion = productor.direccion,
+                        dob = productor.dob,
+                        telefono = productor.telefono,
+                        SINPE = productor.SINPE,
+                        productos = productor.productos,
+                        pedidos = productor.pedidos
+                    };
+                    productores2.Add(productor2);
+                }
+                var json = productores2.ToJson();
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
 
@@ -164,6 +223,7 @@ namespace MongoDB
 
                 var recsa = db.LoadRecords<Pedido>("Pedidos");
                 var pedidos = new List<Pedido> { };
+                var pedidos2 = new List<Pedido2> { };
                 foreach (var rec in recsa)
                 {
                     if (num_pedidos.Contains(rec.num_pedido))
@@ -172,7 +232,21 @@ namespace MongoDB
                     }
                 }
 
-                var json = pedidos.ToJson();
+                foreach (var pedido in pedidos)
+                {
+                    var pedido2 = new Pedido2
+                    {
+                        num_pedido = pedido.num_pedido,
+                        productos = pedido.productos,
+                        num_comprobante = pedido.num_comprobante,
+                        Cedula_cliente = pedido.Cedula_cliente,
+                        entregado = pedido.entregado
+                    };
+
+                    pedidos2.Add(pedido2);
+                }
+
+                var json = pedidos2.ToJson();
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
             }
@@ -194,6 +268,7 @@ namespace MongoDB
 
                 var recsa = db.LoadRecords<Pedido>("Pedidos");
                 var pedidos = new List<Pedido> { };
+                var pedidos2 = new List<Pedido2> { };
                 foreach (var rec in recsa)
                 {
                     if (num_pedidos.Contains(rec.num_pedido))
@@ -202,7 +277,21 @@ namespace MongoDB
                     }
                 }
 
-                var json = pedidos.ToJson();
+                foreach (var pedido in pedidos)
+                {
+                    var pedido2 = new Pedido2
+                    {
+                        num_pedido = pedido.num_pedido,
+                        productos = pedido.productos,
+                        num_comprobante = pedido.num_comprobante,
+                        Cedula_cliente = pedido.Cedula_cliente,
+                        entregado = pedido.entregado
+                    };
+
+                    pedidos2.Add(pedido2);
+                }
+
+                var json = pedidos2.ToJson();
                 p.writeSuccess();
                 p.outputStream.WriteLine(json);
             }
@@ -267,26 +356,129 @@ namespace MongoDB
                 if (filtro == "clientes")
                 {
                     var recs = db.LoadRecords<Cliente>("Clientes");
+                    var clientes2 = new List<Cliente2>{ };
+
+                    foreach (var cliente in recs)
+                    {
+                        var cliente2 = new Cliente2
+                        {
+                            Cedula = cliente.Cedula,
+                            Usuario = cliente.Usuario,
+                            Nombre = cliente.Nombre,
+                            direccion = cliente.direccion,
+                            dob = cliente.dob,
+                            telefono = cliente.telefono,
+                            SINPE = cliente.SINPE,
+                            pass = cliente.pass,
+                            pedidos = cliente.pedidos
+                        };
+
+                        clientes2.Add(cliente2);
+
+                    }
+                    var json = clientes2.ToJson();
+                    p.writeSuccess();
+                    p.outputStream.WriteLine(json);
+
                 }
                 //Ejemplo: localhost:1050/All/productores/
                 if (filtro == "productores")
                 {
                     var recs = db.LoadRecords<Productor>("Productores");
+                    var productores2 = new List<Productor2> { };
+
+                    foreach (var productor in recs)
+                    {
+                        var productor2 = new Productor2
+                        {
+                            Cedula = productor.Cedula,
+                            Nombre = productor.Nombre,
+                            direccion = productor.direccion,
+                            dob = productor.dob,
+                            telefono = productor.telefono,
+                            SINPE = productor.SINPE,
+                            productos = productor.productos,
+                            pedidos = productor.pedidos
+                        };
+
+                        productores2.Add(productor2);
+
+                    }
+                    var json = productores2.ToJson();
+                    p.writeSuccess();
+                    p.outputStream.WriteLine(json);
                 }
                 //Ejemplo: localhost:1050/All/productos/
                 if (filtro == "productos")
                 {
                     var recs = db.LoadRecords<Producto>("Productos");
+                    var productos2 = new List<Producto2> { };
+
+                    foreach (var producto in recs)
+                    {
+                        var producto2 = new Producto2
+                        {
+                            Num_Producto = producto.Num_Producto,
+                            Nombre = producto.Nombre,
+                            id_categoria = producto.id_categoria,
+                            Precio = producto.Precio,
+                            Cantidad = producto.Cantidad,
+                            Modo_venta = producto.Modo_venta,
+                            Disponibilidad = producto.Disponibilidad,
+                            CedulaProductor = producto.CedulaProductor
+                        };
+
+                        productos2.Add(producto2);
+
+                    }
+                    var json = productos2.ToJson();
+                    p.writeSuccess();
+                    p.outputStream.WriteLine(json);
                 }
                 //Ejemplo: localhost:1050/All/pedidos/
                 if (filtro == "pedidos")
                 {
                     var recs = db.LoadRecords<Pedido>("Pedidos");
+                    var pedidos2 = new List<Pedido2> { };
+
+                    foreach (var pedido in recs)
+                    {
+                        var pedido2 = new Pedido2
+                        {
+                            num_pedido = pedido.num_pedido,
+                            productos = pedido.productos,
+                            num_comprobante = pedido.num_comprobante,
+                            Cedula_cliente = pedido.Cedula_cliente,
+                            entregado = pedido.entregado
+                        };
+
+                        pedidos2.Add(pedido2);
+
+                    }
+                    var json = pedidos2.ToJson();
+                    p.writeSuccess();
+                    p.outputStream.WriteLine(json);
                 }
                 //Ejemplo: localhost:1050/All/categorias/
                 if (filtro == "categorias")
                 {
                     var recs = db.LoadRecords<Categoria>("Categorias");
+                    var categorias2 = new List<Categoria2> { };
+
+                    foreach (var categoria in recs)
+                    {
+                        var categoria2 = new Categoria2
+                        {
+                            IdCategoria = categoria.IdCategoria,
+                            Nombre = categoria.Nombre
+                        };
+
+                        categorias2.Add(categoria2);
+
+                    }
+                    var json = categorias2.ToJson();
+                    p.writeSuccess();
+                    p.outputStream.WriteLine(json);
                 }
 
             }
@@ -308,7 +500,20 @@ namespace MongoDB
             //Ejemplo: localhost:1050/AddCliente
             if (p.http_url == "/api/AddCliente")
             {
-                var valor = JsonSerializer.Deserialize<Cliente>(data);
+                var valor2 = JsonSerializer.Deserialize<Cliente2>(data);
+                var valor = new Cliente
+                {
+                    Cedula = valor2.Cedula,
+                    Usuario = valor2.Usuario,
+                    Nombre = valor2.Nombre,
+                    direccion = valor2.direccion,
+                    dob = valor2.dob,
+                    telefono = valor2.telefono,
+                    SINPE = valor2.SINPE,
+                    pass = valor2.pass,
+                    pedidos = valor2.pedidos
+                };            
+
                 db.InsertRecord<Cliente>("Clientes", valor);
             }
 
@@ -316,7 +521,19 @@ namespace MongoDB
             //Ejemplo: localhost:1050/AddProductor
             if (p.http_url == "/api/AddProductor")
             {
-                var valor = JsonSerializer.Deserialize<Productor>(data);
+                var valor2 = JsonSerializer.Deserialize<Productor2>(data);
+                var valor = new Productor
+                {
+                    Cedula = valor2.Cedula,
+                    Nombre = valor2.Nombre,
+                    direccion = valor2.direccion,
+                    dob = valor2.dob,
+                    telefono = valor2.telefono,
+                    SINPE = valor2.SINPE,
+                    productos = valor2.productos,
+                    pedidos = valor2.pedidos
+                };
+
                 db.InsertRecord<Productor>("Productores", valor);
             }
 
@@ -324,7 +541,15 @@ namespace MongoDB
             //Ejemplo: localhost:1050/AddPedido
             if (p.http_url == "/api/AddPedido")
             {
-                var valor = JsonSerializer.Deserialize<Pedido>(data);
+                var valor2 = JsonSerializer.Deserialize<Pedido2>(data);
+                var valor = new Pedido
+                {
+                    num_pedido = valor2.num_pedido,
+                    productos = valor2.productos,
+                    num_comprobante = valor2.num_comprobante,
+                    Cedula_cliente = valor2.Cedula_cliente,
+                    entregado = valor2.entregado
+                };
                 db.InsertRecord<Pedido>("Pedidos", valor);
             }
 
@@ -332,7 +557,12 @@ namespace MongoDB
             //Ejemplo: localhost:1050/AddCategoria
             if (p.http_url == "/api/AddCategoria")
             {
-                var valor = JsonSerializer.Deserialize<Categoria>(data);
+                var valor2 = JsonSerializer.Deserialize<Categoria2>(data);
+                var valor = new Categoria
+                {
+                    IdCategoria = valor2.IdCategoria,
+                    Nombre = valor2.Nombre
+                };
                 db.InsertRecord<Categoria>("Categorias", valor);
             }
 
@@ -340,7 +570,19 @@ namespace MongoDB
             //Ejemplo: localhost:1050/UpdCliente
             if (p.http_url == "/api/UpdCliente")
             {
-                var valor = JsonSerializer.Deserialize<Cliente>(data);
+                var valor2 = JsonSerializer.Deserialize<Cliente2>(data);
+                var valor = new Cliente
+                {
+                    Cedula = valor2.Cedula,
+                    Usuario = valor2.Usuario,
+                    Nombre = valor2.Nombre,
+                    direccion = valor2.direccion,
+                    dob = valor2.dob,
+                    telefono = valor2.telefono,
+                    SINPE = valor2.SINPE,
+                    pass = valor2.pass,
+                    pedidos = valor2.pedidos
+                };
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Cliente>("Clientes");
@@ -353,7 +595,18 @@ namespace MongoDB
             //Ejemplo: localhost:1050/UpdProductor
             if (p.http_url == "/api/UpdProductor")
             {
-                var valor = JsonSerializer.Deserialize<Productor>(data);
+                var valor2 = JsonSerializer.Deserialize<Productor2>(data);
+                var valor = new Productor
+                {
+                    Cedula = valor2.Cedula,
+                    Nombre = valor2.Nombre,
+                    direccion = valor2.direccion,
+                    dob = valor2.dob,
+                    telefono = valor2.telefono,
+                    SINPE = valor2.SINPE,
+                    productos = valor2.productos,
+                    pedidos = valor2.pedidos
+                };
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Productor>("Productores");
@@ -366,7 +619,15 @@ namespace MongoDB
             //Ejemplo: localhost:1050/UpdPedido
             if (p.http_url == "/api/UpdPedido")
             {
-                var valor = JsonSerializer.Deserialize<Pedido>(data);
+                var valor2 = JsonSerializer.Deserialize<Pedido2>(data);
+                var valor = new Pedido
+                {
+                    num_pedido = valor2.num_pedido,
+                    productos = valor2.productos,
+                    num_comprobante = valor2.num_comprobante,
+                    Cedula_cliente = valor2.Cedula_cliente,
+                    entregado = valor2.entregado
+                };
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Pedido>("Pedidos");
@@ -379,7 +640,12 @@ namespace MongoDB
             //Ejemplo: localhost:1050/UpdCategoria
             if (p.http_url == "/api/UpdCategoria")
             {
-                var valor = JsonSerializer.Deserialize<Categoria>(data);
+                var valor2 = JsonSerializer.Deserialize<Categoria2>(data);
+                var valor = new Categoria
+                {
+                    IdCategoria = valor2.IdCategoria,
+                    Nombre = valor2.Nombre
+                };
                 var client = new MongoClient();
                 IMongoDatabase dba = client.GetDatabase("Mercadito");
                 var collection = dba.GetCollection<Categoria>("Categorias");
