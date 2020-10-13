@@ -306,7 +306,7 @@ namespace MongoDB
 
             //Adiciona un cliente en la tabla si no hay ningún otro con el mismo número de cédula o nombre de usuario
             //Ejemplo: localhost:1050/AddCliente
-            if (p.http_url == "/AddCliente")
+            if (p.http_url == "/api/AddCliente")
             {
                 var valor = JsonSerializer.Deserialize<Cliente>(data);
                 db.InsertRecord<Cliente>("Clientes", valor);
@@ -314,7 +314,7 @@ namespace MongoDB
 
             //Adiciona un productor en la tabla si no hay ningún otro con el mismo número de cédula
             //Ejemplo: localhost:1050/AddProductor
-            if (p.http_url == "/AddProductor")
+            if (p.http_url == "/api/AddProductor")
             {
                 var valor = JsonSerializer.Deserialize<Productor>(data);
                 db.InsertRecord<Productor>("Productores", valor);
@@ -322,7 +322,7 @@ namespace MongoDB
 
             //Adiciona un pedido en la tabla si no hay ningún otro con el mismo número de pedido
             //Ejemplo: localhost:1050/AddPedido
-            if (p.http_url == "/AddPedido")
+            if (p.http_url == "/api/AddPedido")
             {
                 var valor = JsonSerializer.Deserialize<Pedido>(data);
                 db.InsertRecord<Pedido>("Pedidos", valor);
@@ -330,7 +330,7 @@ namespace MongoDB
 
             //Adiciona una categoría en la tabla si no hay ningún otra con el mismo número de categoría
             //Ejemplo: localhost:1050/AddCategoria
-            if (p.http_url == "/AddCategoria")
+            if (p.http_url == "/api/AddCategoria")
             {
                 var valor = JsonSerializer.Deserialize<Categoria>(data);
                 db.InsertRecord<Categoria>("Categorias", valor);
@@ -338,7 +338,7 @@ namespace MongoDB
 
             //Actualiza un cliente y verifica con el número de cédula que se envía
             //Ejemplo: localhost:1050/UpdCliente
-            if (p.http_url == "/UpdCliente")
+            if (p.http_url == "/api/UpdCliente")
             {
                 var valor = JsonSerializer.Deserialize<Cliente>(data);
                 var client = new MongoClient();
@@ -351,7 +351,7 @@ namespace MongoDB
 
             //Actualiza un productor y verifica con el número de cédula que se envía
             //Ejemplo: localhost:1050/UpdProductor
-            if (p.http_url == "/UpdProductor")
+            if (p.http_url == "/api/UpdProductor")
             {
                 var valor = JsonSerializer.Deserialize<Productor>(data);
                 var client = new MongoClient();
@@ -364,7 +364,7 @@ namespace MongoDB
 
             //Actualiza un pedido y verifica con el número de pedido
             //Ejemplo: localhost:1050/UpdPedido
-            if (p.http_url == "/UpdPedido")
+            if (p.http_url == "/api/UpdPedido")
             {
                 var valor = JsonSerializer.Deserialize<Pedido>(data);
                 var client = new MongoClient();
@@ -377,7 +377,7 @@ namespace MongoDB
 
             //Actualiza un categoría y verifica con el número de categoría
             //Ejemplo: localhost:1050/UpdCategoria
-            if (p.http_url == "/UpdCategoria")
+            if (p.http_url == "/api/UpdCategoria")
             {
                 var valor = JsonSerializer.Deserialize<Categoria>(data);
                 var client = new MongoClient();
