@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using System.Web.Http;
 using System.Threading;
 
 namespace MongoDB
@@ -17,6 +18,7 @@ namespace MongoDB
         public HttpServer(int port)
         {
             this.port = port;
+            
         }
 
         public void listen()

@@ -13,6 +13,7 @@ namespace MongoDB
     {
         static void Main(string[] args)
         {
+            //Este trozo es del servidor
             HttpServer httpServer;
             if (args.GetLength(0) > 0)
             {
@@ -25,67 +26,11 @@ namespace MongoDB
             Thread thread = new Thread(new ThreadStart(httpServer.listen));
             thread.Start();
 
-
-            //var b = new DOB
-            //{
-            //    Dia = "10",
-            //    Mes = "07",
-            //    Year = "1999"
-            //};
-            //var jason = b.ToJson();
-            //var h = JsonSerializer.Deserialize<DOB>(jason);
-
-            //Console.WriteLine(h.Year);
-
-
-
-            //MongoCRUD db = new MongoCRUD("FoodGos"); //I doesnt exist then is create
-
-            //var recs = db.LoadRecordby<Cliente>("Clientes", "Cedula", "117480511");
-
-            //var recsa = db.LoadRecords<Cliente>("Clientes");
-
-            //var json2 = recsa.ToJson();
-
-            //foreach (var rec in recsa)
-            //{
-            //    var json = rec.ToJson();
-
-            //    Console.WriteLine(json);
-            //}
-
-            //Console.WriteLine(json2);
-
-            //                                        /////////// EJEMPLO de como insertar 
-            //    db.InsertRecord("Clientes", new Cliente
-            //    {
-            //        Cedula = "305000397",
-            //        Usuario = "Nickotronz7",
-            //        Nombre = new Nombre_Persona { Primer_Nombre = "Nickolas", Apellido1 = "Rodriguez", Apellido2 = "Cordero" },
-            //        direccion = new Direccion { Provincia = "Cartago", Canton = "El Guarco", Distrito = "Barrancas" },
-            //        dob = new DOB { Dia = "05", Mes = "02", Year = "1997" },
-            //        telefono = "61682819",
-            //        SINPE = "61682819",
-            //        pass = "hola123",
-            //        pedidos = new List<string>()
-            //            {
-            //                "254864",
-            //                "697319",
-            //                "691634",
-            //                "26868"
-            //            }
-
-            //}); //Lo convierte en JSON y lo mete, pero se llama BSON
-
-
-            //var pedidos = new List<string>()
-            //            {
-            //                "254864",
-            //                "697319",
-            //                "691634",
-            //                "26868"
-            //            };
-            //Console.WriteLine(pedidos.ToJson());
+            //Este trozo sirve para popular la base de datos si está vacía
+            //Populate populate = new Populate();
+            //populate.productores();
+            //populate.clientes();
+            //populate.cateogiasA();
 
             Console.ReadLine();
         }
