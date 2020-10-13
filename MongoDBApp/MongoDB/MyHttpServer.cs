@@ -48,7 +48,7 @@ namespace MongoDB
                 {
                     instruccion = instruccion + a[i];
                 }
-                else if (slash == 2)
+                else if (slash == 3)
                 {
                     filtro = filtro + a[i];
                 }
