@@ -23,21 +23,28 @@ namespace MongoDB
             
             MongoCRUD db = new MongoCRUD("Mercadito");  //Se obtiene la base que se va a estar usando
 
+            //localhost:1050/api/instruccion/filtro/
+
             var a = p.http_url; //URL que llega
             var instruccion = ""; //Lo que pide el cliente
+            var api = "";
             var filtro = ""; //Filtro de algo específico que solicita
             var slash = 0; //Contador
             var tam = a.Length;
             var i = 0;
 
             //Guarda la instrucción recibida y el filtro según lo que desea el cliente
-            while (i < tam && slash < 3)
+            while (i < tam && slash < 4)
             {
                 if (a[i] == '/')
                 {
                     slash += 1;
                 }
                 else if (slash == 1)
+                {
+                    api = api + a[i];
+                }
+                else if (slash == 2)
                 {
                     instruccion = instruccion + a[i];
                 }
