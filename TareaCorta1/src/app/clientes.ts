@@ -6,11 +6,16 @@ export class Clientes{
     Usuario: string;
     Nombre_Persona: {Primer_Nombre:string,Apellido1: string, Apellido2:string};
     direccion: {Provincia: string, Canton: string, Distrito: string};
-    dob: {Dia: string, Mes: string, Year: string};
+    dob: {Dia: number, Mes: number, Year: number};
     telefono: number;
     SINPE: number;
     pass: string;
-    pedidos: []
+    pedidos: [];
+
+    constructor(nCedula:number, nUsuario:string){
+        this.Cedula = nCedula;
+        this.Usuario = nUsuario;
+    }
 }
 
 /**

@@ -1,9 +1,10 @@
-import {Component} from '@angular/core'
-
+import {Component} from '@angular/core';
+import { DataService } from 'src/app/data.service';
 @Component({
     selector: 'gestionproductos',
     templateUrl: './gestionproductos.component.html',
-    styleUrls: ['./gestionproductos.component.css']
+    styleUrls: ['./gestionproductos.component.css'],
+    providers:[DataService],
 })
 
 export class GestionProductos{
@@ -18,7 +19,7 @@ export class GestionProductos{
     public Disponibilidad: string;
     public Foto: string;
 
-    constructor(){
+    constructor(private dataSvc : DataService){
         this.Nombre = "Papa";
         this.Categoria = "Verdura";
         this.Precio = 450;
@@ -26,4 +27,7 @@ export class GestionProductos{
         this.Disponibilidad = "Disponible";
         this.Foto = "http";
     }
+
+
+
 }

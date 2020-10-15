@@ -35,7 +35,7 @@ namespace MongoDB
             var i = 0;
 
             //Guarda la instrucción recibida y el filtro según lo que desea el cliente
-            while (i < tam && slash < 4)
+            while (i < tam || slash < 4)
             {
                 if (a[i] == '/')
                 {

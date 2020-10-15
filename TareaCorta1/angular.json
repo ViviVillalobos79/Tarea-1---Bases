@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TareaCorta1"
+    }
+  },
+  "defaultProject": "TareaCorta1",
+  "cli": {
+    "analytics": "02163aa3-2586-4a6d-92ff-46ca8b612085"
+  }
 }

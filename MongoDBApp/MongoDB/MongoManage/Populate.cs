@@ -268,6 +268,7 @@ namespace MongoDB
 
         public void crear_productos(int cedula, List<int> productosA)
         {
+            
             var seed = Environment.TickCount;
             var random = new Random(seed);
             foreach (var num_producto in productosA)
@@ -275,8 +276,6 @@ namespace MongoDB
                 var categ = random.Next(1, 6);
 
                 var nombre = productos_pro[categ - 1][random.Next(productos_pro[1].Count)];
-
-
 
                 Producto producto = new Producto
                 {
@@ -289,9 +288,7 @@ namespace MongoDB
                     Disponibilidad = true,
                     CedulaProductor = cedula
                 };
-
                 db.InsertRecord<Producto>("Productos", producto);
-
             }
         }
 
@@ -316,7 +313,7 @@ namespace MongoDB
                     num_comprobante = random.Next(0, 28712),
                     Cedula_cliente = cedula,
                     entregado = false
-            };
+                };
 
                 db.InsertRecord<Pedido>("Pedidos", ped);
 

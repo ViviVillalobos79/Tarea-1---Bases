@@ -5,7 +5,8 @@ import {Location} from '@angular/common'
 @Component({
     selector: 'gestionprodsclientes',
     templateUrl: './gestionprodsclientes.component.html',
-    styleUrls: ['./gestionprodsclientes.component.css']
+    styleUrls: ['./gestionprodsclientes.component.css'],
+    providers:[ClientesService]
 })
 
 export class GestionProdsClientes implements OnInit{
@@ -42,6 +43,8 @@ export class GestionProdsClientes implements OnInit{
 
     ngOnInit(): void {
         //this.clientesService.getClientes();
+        this.clientesService.getClienteID("815935934").subscribe(res => {
+      console.log('Res ', res);});
         this.getClientes();
      }
      goBack(): void {

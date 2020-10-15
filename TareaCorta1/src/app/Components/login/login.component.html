@@ -4,13 +4,13 @@
         <h1 class="text"> Iniciar sesión</h1>
         <mat-card-content class="log">
             <mat-form-field appearance="form" class="form">
-                <input matInput type="text" [formControl]="name" placeholder="Correo electrónico"/>
+                <input matInput type="text" [formControl]="name" ng model = "@username" placeholder="Correo electrónico"/>
             </mat-form-field>
 
             <mat-form-field appearance="form" class="form">
-                <input matInput type="password" [formControl]="pass" placeholder="Contraseña"/>
+                <input matInput type="password" [formControl]="pass" ng model = "@userpassword" placeholder="Contraseña"/>
             </mat-form-field>
-            <button mat-button class="btn-login" [routerLink]="'/afiliacion'">
+            <button mat-button class="btn-login" (click) = "validate()" [routerLink]="'/afiliacion'" >
                 <h3>Ingresar</h3>
             </button>
         </mat-card-content>

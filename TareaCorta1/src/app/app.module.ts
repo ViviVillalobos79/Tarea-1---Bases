@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,8 +27,9 @@ import { TramosComponent } from './Components/tramos/tramos.component';
 import { FormsModule } from '@angular/forms';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientesService } from './clientes.service';
+
 
 
 
@@ -56,6 +57,7 @@ import { ClientesService } from './clientes.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatCardModule,
     MatFormFieldModule,
@@ -63,9 +65,10 @@ import { ClientesService } from './clientes.service';
     ReactiveFormsModule,
     MatButtonModule,
     FormsModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    
   ],
-  providers: [ClientesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

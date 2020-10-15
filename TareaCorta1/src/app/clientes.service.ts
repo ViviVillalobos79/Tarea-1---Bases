@@ -17,9 +17,13 @@ const httpOptions = {
 export class ClientesService {
 
   // Url para acceder a la tabla en mongodb
-  private clientesUrl = 'http://localhost:1050/api/Clientes/';  
+  private clientesUrl = 'http://localhost:1050/api/CedulaCliente';  
 
   constructor( private http: HttpClient) { }
+
+  getAll():Observable<any>{
+    return this.http.get<any>('/api/CedulaCliente/84895857/');
+  }
 
   // Peticion a la base de todos los clientes (get)
   getClientes (): Observable<Clientes[]> {
