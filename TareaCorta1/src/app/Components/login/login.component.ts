@@ -17,6 +17,7 @@ export class Login{
   pass = new FormControl('');
 
   //Consigue los usuarios válidos para el login del REST
+  client;
   USERS_DATA = []
   clientesObservable : Observable<any[]>
 
@@ -38,14 +39,18 @@ export class Login{
     for (let i = 0; i < contador; i++){
       var user1 = this.USERS_DATA[i].Usuario
       var pw1 = this.USERS_DATA[i].pass
-      if(user.toString() == user1.toString() && pw.toString() == pw1.toString()){
+      if(user == user1 && pw == pw1){
         login = true;
+       //this.client = new Clientes(parseInt(this.USERS_DATA[i].Cedula),this.USERS_DATA[i].Usuario);
+        this.client = this.USERS_DATA[i]
         break;
       }
     }
     if(login){
       //Poner código de que pasa cuando hace login
-      console.log("hace login");
+      // El usuario que hizo login es client
+      console.log('hace login');
+
     }
     else{
       //Poner código de que pasa cuando hace login
