@@ -53,7 +53,7 @@ import { ClientesService } from './clientes.service';
     CarritoCompras,
     TramosComponent,
     FeedbackComponent,
-    ComprobanteComponent
+    ComprobanteComponent,
   ],
   imports: [
     BrowserModule,
