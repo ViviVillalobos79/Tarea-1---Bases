@@ -1,6 +1,6 @@
 import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProvinciaI, CantonI, DistritoI} from '../../models/model.interface'
 import { DatasService} from '../../services/datas.service'
 
@@ -22,7 +22,21 @@ export class ContactFormComponent {
   public cantones: CantonI[];
   public distritos: DistritoI[];
 
+  
+  cedula = new FormControl('');
+  
+  
+
   myForm: FormGroup;
+  nombre: string;
+  apellido1: string;
+  username:string;
+  password:string;
+  year: number;
+  month: number;
+  day: number;
+  telefono: number;
+  sinpe: number;
 
   ngOnInit(){
     this.provincias = this.datasServices.getProvincias();
@@ -43,12 +57,15 @@ export class ContactFormComponent {
       'apellido2' : ['', [Validators.required]],
       'provincia' : ['', [Validators.required]],
       'canton' : ['', [Validators.required]],
-      'distrito' : ['', [Validators.required]]
+      'distrito' : ['', [Validators.required]],
+      'dob' : ['', [Validators.required]],
+      'telefono': ['', [Validators.required, Validators.min(60000000),Validators.max(89999999)]],
+      'sinpe': ['', [Validators.required, Validators.min(60000000),Validators.max(89999999)]],
+      
 
     })
   }
 
-  log(x) { console.log(x);}
 
   cedula_check(x : number){
     let ced_len = x.toString().length
@@ -57,9 +74,37 @@ export class ContactFormComponent {
   }
 
   saveData(){
-    console.log(this.log(this.myForm.invalid));
+    //Vuelve al home page
+    let jsonMsg = {
+      "Cedula" : this.cedula,
+      "Usuario" : this.username,
+      "Nombre" : { 
+          "Primer_Nombre" : this.nombre,
+          "Apellido1" : this.apellido1,
+          "Apellido2" : this.apellido2
+      },
+      "direccion" : {
+          "Provincia" : "Limon",
+          "Canton" : "Pococi",
+          "Distrito" : "Guapiles"
+      },
+      "dob" : {
+          "Dia" : 3,
+          "Mes" : 9,
+          "Year" : 1996
+      },
+      "telefono" : 61682819,
+      "SINPE" : 88566646,
+      "pass" : "yellow68",
+      "pedidos":  [ 
+          2848,
+          4562]
+  }
+  ;
+  console.log(jsonMsg);
   }
 
+  //Guarda la provincia
   onSelect(id:number):void{
     this.cantones = this.datasServices.getCantones().filter((item : CantonI) => item.provinciaId == id);
 
@@ -71,6 +116,7 @@ export class ContactFormComponent {
     });
   }
 
+  //Guarda el cantón
   onSelect2(id:number):void{
     this.distritos = this.datasServices.getDistritos().filter((item : DistritoI) => item.cantonId == id);
 
@@ -81,6 +127,8 @@ export class ContactFormComponent {
       }
     });
   }
+
+  //Guarda el distrito
   onSelect3(id:number):void{
     let distritosTemmp: DistritoI[] = this.datasServices.getDistritos().filter
     ((item : DistritoI) => (item.cantonId == this.selectedCanton.id && item.id== id));
@@ -96,5 +144,41 @@ export class ContactFormComponent {
     console.log(this.selectedDistritoA);
   }
 
+  user(usernames:string){
+    this.username = usernames;
+  }
+
+  passwordSet(password:string){
+    this.password = password;
+  }
+
+  nombreSet(nombre:string){
+    this.nombre = nombre;
+  }
+
+  apellido1Set(apellido1:string){
+    this.apellido1 = apellido1;
+  }
+
+  apellido2Set(apellido2:string){
+    this.apellido1 = apellido2;
+  }
+
+  dobSet(dob){
+    this.year = (dob[0]+dob[1]+dob[2]+dob[3])*1;
+    this.month = (dob[5]+dob[6])*1;
+    this.day = (dob[8]+dob[9])*1;;
+  }
+
+  telefonoSet(telefono:number){
+    this.telefono = telefono;
+  }
+
+  sinpeSet(sinpe:number){
+    this.sinpe = sinpe;
+  }
+  
+
+  
 
 }

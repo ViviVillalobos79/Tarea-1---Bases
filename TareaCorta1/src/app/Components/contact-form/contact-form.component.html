@@ -12,7 +12,7 @@
             <div>
                 <!--Contenedor para Ingresar Cedula-->
                 <label for="Cedula"><b>Cédula</b>:</label>
-                <input class="form-control" formControlName="cedula" type="number" placeholder="cédula">
+                <input [(ngModel)] = "cedula" class="form-control" formControlName="cedula" type="number" placeholder="cédula">
             </div>
             <div *ngIf="myForm.get('cedula').errors && myForm.get('cedula').dirty">
                 <p *ngIf="myForm.get('cedula').hasError('required')">Cédula es obligatoria</p>
@@ -22,8 +22,9 @@
 
             <div>
                 <!--Contenedor para Ingresar Usuario-->
-                <label for="Usuario"><b>Usuario</b>:</label>
-                <input class="form-control" formControlName="usuario" type="text" placeholder="Sebastian2">
+                <label for="usuario"><b>Usuario</b>:</label>
+                <input class="form-control" formControlName="usuario" type="text" placeholder="Sebastian2" 
+                (change)=user($event.target.value)>
             </div>
             <div *ngIf="myForm.get('usuario').errors && myForm.get('usuario').dirty">
                 <p *ngIf="myForm.get('usuario').hasError('required')">Nombre de usuario es obligatorio</p>
@@ -34,7 +35,8 @@
             <div>
                 <!--Contenedor para Ingresar Contraseña-->
                 <label for="pass"><b>Contraseña</b>:</label>
-                <input class="form-control" formControlName="pass" type="password" placeholder="**********">
+                <input class="form-control" formControlName="pass" type="password" placeholder="**********"
+                (change)="passwordSet($event.target.value)">
             </div>
             <div *ngIf="myForm.get('pass').errors && myForm.get('pass').dirty">
                 <p *ngIf="myForm.get('pass').hasError('required')">Contraseña es obligatoria</p>
@@ -45,7 +47,8 @@
             <div>
                 <!--Contenedor para Ingresar Nombre-->
                 <label for="nombre"><b>Nombre</b>:</label>
-                <input class="form-control" formControlName="nombre" type="text" placeholder="Sebastián">
+                <input class="form-control" formControlName="nombre" type="text" placeholder="Sebastián"
+                (change)='nombreSet($event.target.value)'>
             </div>
             <div *ngIf="myForm.get('nombre').errors && myForm.get('nombre').dirty">
                 <p *ngIf="myForm.get('nombre').hasError('required')">Nombre es obligatorio</p>
@@ -54,7 +57,8 @@
             <div>
                 <!--Contenedor para Apellido1-->
                 <label for="apellido1"><b>Primer Apellido</b>:</label>
-                <input class="form-control" formControlName="apellido1" type="text" placeholder="Vargas">
+                <input class="form-control" formControlName="apellido1" type="text" placeholder="Vargas"
+                (change)='apellido1Set($event.target.value)'>
             </div>
             <div *ngIf="myForm.get('apellido1').errors && myForm.get('apellido1').dirty">
                 <p *ngIf="myForm.get('apellido1').hasError('required')">Primer Apellido es obligatorio</p>
@@ -63,7 +67,8 @@
             <div>
                 <!--Contenedor para Apellido2-->
                 <label for="apellido2"><b>Segundo Apellido</b>:</label>
-                <input class="form-control" formControlName="apellido2" type="text" placeholder="Mora">
+                <input class="form-control" formControlName="apellido2" type="text" placeholder="Mora"
+                (change)='apellido2Set($event.target.value)'>
             </div>
             <div *ngIf="myForm.get('apellido2').errors && myForm.get('apellido2').dirty">
                 <p *ngIf="myForm.get('apellido2').hasError('required')">Segundo Apellido es obligatorio</p>
@@ -98,10 +103,41 @@
                     </option>
                 </select>
             </div>
+
+            <div>
+                <!--Contenedor para DOB-->
+                <label for="dob"><b>Fecha de nacimiento</b>:</label>
+                <input class="form-control" formControlName="dob" type="date" placeholder="DOB" 
+                (change)='dobSet($event.target.value)'>
+            </div>
+
+            <div>
+                <!--Contenedor para Teléfono-->
+                <label for="telefono"><b>Número de Teléfono</b>:</label>
+                <input class="form-control" formControlName="telefono" type="number" placeholder="telefono"
+                (change)='telefonoSet($event.target.value)'>
+            </div>
+            <div *ngIf="myForm.get('telefono').errors && myForm.get('telefono').dirty">
+                <p *ngIf="myForm.get('telefono').hasError('required')">Número de teléfono es obligatorio</p>
+                <p *ngIf="myForm.get('telefono').hasError('max')">El número de teléfono debe tener 8 dígitos y ser válido</p>
+                <p *ngIf="myForm.get('telefono').hasError('min')">El número de teléfono debe tener 8 dígitos y ser válido</p>
+            </div>
+
+            <div>
+                <!--Contenedor para SINPE-->
+                <label for="sinpe"><b>Número de SINPE</b>:</label>
+                <input class="form-control" formControlName="sinpe" type="number" placeholder="sinpe"
+                (change)='sinpeSet($event.target.value)'>
+            </div>
+            <div *ngIf="myForm.get('sinpe').errors && myForm.get('sinpe').dirty">
+                <p *ngIf="myForm.get('sinpe').hasError('required')">Número de sinpe es obligatorio</p>
+                <p *ngIf="myForm.get('sinpe').hasError('max')">El número de sinpe debe tener 8 dígitos y ser válido</p>
+                <p *ngIf="myForm.get('sinpe').hasError('min')">El número de sinpe debe tener 8 dígitos y ser válido</p>
+            </div>
             
  
             <div>
-                <button type="submit" [disabled]="myForm.invalid">Save</button>
+                <button type="submit" >Save</button>
             </div>
 
         </form>
