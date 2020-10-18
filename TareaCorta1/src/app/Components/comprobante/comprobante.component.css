@@ -1,3 +1,7 @@
+/* 
+En este archivo se agrega el formato necesario para la vista del comprobante
+Para acomodar los contenedores de cada vista se utiliza flexbox segun corresponda
+*/
 .header{
 	display: flex;
     flex-direction: column;

@@ -18,7 +18,11 @@ import { CarritoCompras } from './Components/carritocompras/carritocompras.compo
 import { TramosComponent } from './Components/tramos/tramos.component';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
+import { RegistrationComponent } from './Components/registration/registration.component';
+import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
 
+//* en este modulo se importan las vistas para agregarles un nombre de dirección y asignarle un componente
+ 
 const routes: Routes = [
 {
   path: 'home',
@@ -78,12 +82,20 @@ const routes: Routes = [
   component: Login
 },
 {
+  path: 'registration',
+  component: RegistrationComponent
+},
+{
   path: 'tramoproductor',
   component: TramoProductor
 },
 {
   path: 'carritocompras',
   component: CarritoCompras
+},
+{
+  path: 'feedbackPres',
+  component: FeedbackPresComponent
 },
 {
   path: 'tramos',

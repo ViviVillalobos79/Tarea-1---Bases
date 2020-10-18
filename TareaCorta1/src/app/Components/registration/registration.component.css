@@ -1,5 +1,5 @@
 /* 
-En este archivo se agrega el formato necesario para la vista del log in
+En este archivo se agrega el formato necesario para la vista del registro
 Para acomodar los contenedores de cada vista se utiliza flexbox segun corresponda
 */
 .flex{
@@ -16,6 +16,7 @@ Para acomodar los contenedores de cada vista se utiliza flexbox segun correspond
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 30px;
 
 }
 
@@ -25,15 +26,15 @@ Para acomodar los contenedores de cada vista se utiliza flexbox segun correspond
     padding-top: 20px;
 }
 
-.cardLogin{
+.cardRes{
     height: 540px;
     width: 500px;
     padding-right: 50px;
-    background: linear-gradient(180.15deg, #3FC5D8 0.13%, rgba(255, 255, 255, 0) 39.1%), #FFFFFF;
+    background: linear-gradient(180.15deg,  #3AF0D3 0.13%, rgba(255, 255, 255, 0) 39.1%), #FFFFFF;
     border-radius: 16px;
 }
 
-.log{
+.res{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +55,7 @@ Para acomodar los contenedores de cada vista se utiliza flexbox segun correspond
     line-height: 16px;
 }
 
-.btn-login{
+.btn-res{
     width: 377px;
     height: 60px;
     background: #336699;

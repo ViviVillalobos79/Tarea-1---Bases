@@ -1,4 +1,9 @@
+/* En este archivo se agrega el formato necesario para la vista de administrador
+
+*/
 .mainCon{
+    /*Para acomodar los contenedores de cada vista se utiliza flexbox segun corresponda
+    */
     display: flex;
     flex-direction: row;
     background: #E4E4E4;
@@ -8,6 +13,7 @@
     height: 720px;
     background: #FFFFFF;    
 }
+
 h1{
     display: flex;
     justify-content: center;

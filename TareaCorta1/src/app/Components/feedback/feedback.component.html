@@ -1,10 +1,14 @@
+<!-- despues de la vista del comprobante se tiene la vista del feedback en donde el cliente puede agregar la retroalimentación 
+tanto del productor como del producto-->
 <header class="header">
+    <!-- Con esta etiqueta se pueden agregar imagenes agregando el src del mismo-->
     <img class="logoContainer" mat-card-image src="../../../assets/Images/logo.png">
 </header>
 <body>
     <h1 class="gracias">¡GRACIAS POR REALIZAR UNA COMPRA!</h1>
     <h2>Por favor agregar feedback al Productor y al Producto</h2>
     <div class="container">
+        <!-- Se agregan campos que aceptan la entrada de texto para manipulalr la información de feedback brindada por el cliente-->
         <mat-form-field appearance="outline" class="text" >
             <textarea matInput  placeholder="Feedback al Productor" [formControl]="feedbackProductor"></textarea>
         </mat-form-field>

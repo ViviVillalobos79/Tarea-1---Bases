@@ -1,3 +1,7 @@
+/* 
+En este archivo se agrega el formato necesario para la vista del productor
+Para acomodar los contenedores de cada vista se utiliza flexbox segun corresponda
+*/
 .mainCon{
     display: flex;
     flex-direction: row;

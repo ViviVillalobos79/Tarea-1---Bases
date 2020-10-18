@@ -29,9 +29,13 @@ import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientesService } from './clientes.service';
+import { RegistrationComponent } from './Components/registration/registration.component';
+import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
 
 
-
+/* en este modulo se importa todo lo necesario para la implementacion de la solucion referente al FrontEnd
+como por ejemplo los componentes de angular, asi mismo se importan los componentes o las vistas de la pagina web
+*/ 
 
 @NgModule({
   declarations: [
@@ -53,7 +57,9 @@ import { ClientesService } from './clientes.service';
     CarritoCompras,
     TramosComponent,
     FeedbackComponent,
-    ComprobanteComponent
+    ComprobanteComponent,
+    RegistrationComponent,
+    FeedbackPresComponent
   ],
   imports: [
     BrowserModule,

@@ -37,3 +37,12 @@ h2{
     margin-top: 20px;
     margin: 20px;
 }
+.con{
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+}
+.btn{
+    color: #FFFFFF;
+    background-color:#3FC5D8;
+}

@@ -1,15 +1,19 @@
+<!--En este componente tenemos la vista de carrito de compras del cliente-->
 <body>
     <h1>Carrito de compras</h1>
-
+    <!-- Se utiliza bootstrap para crear la lista-->
     <div class="container">
         <div class="lista">
             <table class="table table-striped">
               <tbody>
+                  <!-- A continuación se realiza un for en html con el fin de recorrer la lista y mostrar los productos
+                la cantidad que se desea y el precio -->
                 <tr *ngFor="let compra of compras">
                   <td>{{ compra.Producto }}</td>
                   <td>{{ compra.Cantidad }}</td>
                   <td>{{ compra.Precio }}</td>
                   <td>
+                      <!-- Se tiene funciones para realizar la suma y la resta de los productos-->
                     <button mat-flat-button (click)="suma(compra.Producto)" class="mas"> 
                         <h1> + </h1> 
                     </button>
@@ -20,6 +24,7 @@
                 </tr>
               </tbody>
             </table>
+            <!-- Se agrega un boton para pasar a la vista del comprobante -->
             <button mat-flat-button class="pagar" [routerLink]="'/comprobante'">
                 <h2> Pagar</h2>
             </button>

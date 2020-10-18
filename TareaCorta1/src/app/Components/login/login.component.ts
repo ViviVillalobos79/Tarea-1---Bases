@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 
 export class Login{
-    
+    // FormControl es un elemento de control que permite el manejo de los datos ingresados por el usuario
   name = new FormControl('');
   pass = new FormControl('');
 

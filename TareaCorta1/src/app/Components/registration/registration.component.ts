@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-feedback',
-  templateUrl: './feedback.component.html',
-  styleUrls: ['./feedback.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
   // FormControl es un elemento de control que permite el manejo de los datos ingresados por el usuario
-  feedbackProductor = new FormControl('');
-  feedbackProducto = new FormControl('');
+  name = new FormControl('');
+  pass = new FormControl('');
 
   constructor() { }
 
