@@ -18,8 +18,12 @@ import { CarritoCompras } from './Components/carritocompras/carritocompras.compo
 import { TramosComponent } from './Components/tramos/tramos.component';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
+<<<<<<< HEAD
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
+=======
+import { ContactFormComponent } from './Components/contact-form/contact-form.component';
+>>>>>>> 61d4dcebe9b44d5a237872549ec7f549da7c8459
 
 //* en este modulo se importan las vistas para agregarles un nombre de dirección y asignarle un componente
  
@@ -108,8 +112,11 @@ const routes: Routes = [
 {
   path: 'comprobante',
   component: ComprobanteComponent
-}
-
+},
+{
+  path: 'signin',
+  component: ContactFormComponent
+},
 ];
 
 @NgModule({

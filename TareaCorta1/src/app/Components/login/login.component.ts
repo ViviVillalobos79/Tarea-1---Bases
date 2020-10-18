@@ -1,5 +1,5 @@
 import {Component} from '@angular/core'
-import { DataService } from '../../data.service';
+import { DataService } from '../../services/data.service';
 import { FormControl } from '@angular/forms';
 import { Clientes } from 'src/app/clientes';
 import { Observable } from 'rxjs';
@@ -41,13 +41,12 @@ export class Login{
       var pw1 = this.USERS_DATA[i].pass
       if(user == user1 && pw == pw1){
         login = true;
-       //this.client = new Clientes(parseInt(this.USERS_DATA[i].Cedula),this.USERS_DATA[i].Usuario);
         this.client = this.USERS_DATA[i]
         break;
       }
     }
     if(login){
-      //Poner código de que pasa cuando hace login
+      // Poner código de que pasa cuando hace login
       // El usuario que hizo login es client
       console.log('hace login');
 

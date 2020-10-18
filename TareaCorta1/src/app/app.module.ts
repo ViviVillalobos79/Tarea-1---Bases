@@ -29,8 +29,13 @@ import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientesService } from './clientes.service';
+<<<<<<< HEAD
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
+=======
+import { ContactFormComponent } from './Components/contact-form/contact-form.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+>>>>>>> 61d4dcebe9b44d5a237872549ec7f549da7c8459
 
 
 /* en este modulo se importa todo lo necesario para la implementacion de la solucion referente al FrontEnd
@@ -58,8 +63,12 @@ como por ejemplo los componentes de angular, asi mismo se importan los component
     TramosComponent,
     FeedbackComponent,
     ComprobanteComponent,
+<<<<<<< HEAD
     RegistrationComponent,
     FeedbackPresComponent
+=======
+    ContactFormComponent,
+>>>>>>> 61d4dcebe9b44d5a237872549ec7f549da7c8459
   ],
   imports: [
     BrowserModule,
@@ -72,6 +81,7 @@ como por ejemplo los componentes de angular, asi mismo se importan los component
     MatButtonModule,
     FormsModule,
     BrowserAnimationsModule,
+    DropDownListModule,
     
   ],
   providers: [],
