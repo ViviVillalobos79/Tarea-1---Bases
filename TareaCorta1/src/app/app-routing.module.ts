@@ -18,6 +18,7 @@ import { CarritoCompras } from './Components/carritocompras/carritocompras.compo
 import { TramosComponent } from './Components/tramos/tramos.component';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
+import { ContactFormComponent } from './Components/contact-form/contact-form.component';
 
 const routes: Routes = [
 {
@@ -96,7 +97,11 @@ const routes: Routes = [
 {
   path: 'comprobante',
   component: ComprobanteComponent
-}
+},
+{
+  path: 'signin',
+  component: ContactFormComponent
+},
 ];
 
 @NgModule({

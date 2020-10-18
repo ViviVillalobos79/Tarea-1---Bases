@@ -1,0 +1,111 @@
+<div class="split right">
+    <div class="centered">  
+        <h2>Solcitar Afiliación</h2>   
+      <img class="center"  alt="Responsive image" style="width:300px;height:300px;" src="../../../assets/Images/Image6.png">
+    </div>
+</div>
+  
+  
+<div class="split left">
+    <div class="col-md-6 user-container">
+        <form [formGroup]="myForm" (ngSubmit) = "saveData()" novalidate>
+            <div>
+                <!--Contenedor para Ingresar Cedula-->
+                <label for="Cedula"><b>Cédula</b>:</label>
+                <input class="form-control" formControlName="cedula" type="number" placeholder="cédula">
+            </div>
+            <div *ngIf="myForm.get('cedula').errors && myForm.get('cedula').dirty">
+                <p *ngIf="myForm.get('cedula').hasError('required')">Cédula es obligatoria</p>
+                <p *ngIf="myForm.get('cedula').hasError('max')">Cédula debe tener 9 dígitos</p>
+                <p *ngIf="myForm.get('cedula').hasError('min')">Cédula debe tener 9 dígitos</p>
+            </div>
+
+            <div>
+                <!--Contenedor para Ingresar Usuario-->
+                <label for="Usuario"><b>Usuario</b>:</label>
+                <input class="form-control" formControlName="usuario" type="text" placeholder="Sebastian2">
+            </div>
+            <div *ngIf="myForm.get('usuario').errors && myForm.get('usuario').dirty">
+                <p *ngIf="myForm.get('usuario').hasError('required')">Nombre de usuario es obligatorio</p>
+                <p *ngIf="myForm.get('usuario').hasError('minLength')">El usuario debe tener 10 caracateres</p>
+                <p *ngIf="myForm.get('usuario').hasError('maxLength')">El usuario debe tener 10 caracateres</p>
+            </div>
+
+            <div>
+                <!--Contenedor para Ingresar Contraseña-->
+                <label for="pass"><b>Contraseña</b>:</label>
+                <input class="form-control" formControlName="pass" type="password" placeholder="**********">
+            </div>
+            <div *ngIf="myForm.get('pass').errors && myForm.get('pass').dirty">
+                <p *ngIf="myForm.get('pass').hasError('required')">Contraseña es obligatoria</p>
+                <p *ngIf="myForm.get('pass').hasError('minLength')">La contraseña debe tener 10 caracateres</p>
+                <p *ngIf="myForm.get('pass').hasError('maxLength')">La contraseña debe tener 10 caracateres</p>
+            </div>
+
+            <div>
+                <!--Contenedor para Ingresar Nombre-->
+                <label for="nombre"><b>Nombre</b>:</label>
+                <input class="form-control" formControlName="nombre" type="text" placeholder="Sebastián">
+            </div>
+            <div *ngIf="myForm.get('nombre').errors && myForm.get('nombre').dirty">
+                <p *ngIf="myForm.get('nombre').hasError('required')">Nombre es obligatorio</p>
+            </div>
+
+            <div>
+                <!--Contenedor para Apellido1-->
+                <label for="apellido1"><b>Primer Apellido</b>:</label>
+                <input class="form-control" formControlName="apellido1" type="text" placeholder="Vargas">
+            </div>
+            <div *ngIf="myForm.get('apellido1').errors && myForm.get('apellido1').dirty">
+                <p *ngIf="myForm.get('apellido1').hasError('required')">Primer Apellido es obligatorio</p>
+            </div>
+
+            <div>
+                <!--Contenedor para Apellido2-->
+                <label for="apellido2"><b>Segundo Apellido</b>:</label>
+                <input class="form-control" formControlName="apellido2" type="text" placeholder="Mora">
+            </div>
+            <div *ngIf="myForm.get('apellido2').errors && myForm.get('apellido2').dirty">
+                <p *ngIf="myForm.get('apellido2').hasError('required')">Segundo Apellido es obligatorio</p>
+            </div>
+            
+            <div>
+                <label for="provincia"><b>Provincia</b>:</label>
+                <select [(ngModel)] = "selectedProvincia.id" class="form-control" formControlName="provincia" 
+                (change)="onSelect($event.target.value)">
+                    <option *ngFor= "let provincia of provincias" value={{provincia.id}}>
+                        {{provincia.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngIf="cantones?.length > 1">
+                <label for="canton"><b>Cantón</b>:</label>
+                <select [(ngModel)] = "selectedCanton.id" class="form-control" id= "canton" formControlName="canton" 
+                (change)="onSelect2($event.target.value)">
+                    <option *ngFor= "let canton of cantones" value={{canton.id}}>
+                        {{canton.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngIf="distritos?.length > 0">
+                <label for="distrito"><b>Distrito</b>:</label>
+                <select [(ngModel)] = "selectedDistrito.id" class="form-control" formControlName="distrito" 
+                (change)="onSelect3($event.target.value)">
+                    <option *ngFor= "let distrito of distritos" value={{distrito.id}}>
+                        {{distrito.name}}
+                    </option>
+                </select>
+            </div>
+            
+ 
+            <div>
+                <button type="submit" [disabled]="myForm.invalid">Save</button>
+            </div>
+
+        </form>
+    </div>
+
+
+</div>

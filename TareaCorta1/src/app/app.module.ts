@@ -29,6 +29,8 @@ import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientesService } from './clientes.service';
+import { ContactFormComponent } from './Components/contact-form/contact-form.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 
 
@@ -54,6 +56,7 @@ import { ClientesService } from './clientes.service';
     TramosComponent,
     FeedbackComponent,
     ComprobanteComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ import { ClientesService } from './clientes.service';
     MatButtonModule,
     FormsModule,
     BrowserAnimationsModule,
+    DropDownListModule,
     
   ],
   providers: [],
