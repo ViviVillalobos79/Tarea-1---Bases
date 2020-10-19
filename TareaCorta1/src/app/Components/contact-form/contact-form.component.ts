@@ -3,12 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProvinciaI, CantonI, DistritoI} from '../../models/model.interface'
 import { DatasService} from '../../services/datas.service'
+import { DataService } from '../../services/data.service';
+import { Observable } from 'rxjs';
+import { Clientes } from 'src/app/clientes';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css'],
-  providers:[DatasService],
+  providers:[DatasService, DataService],
 })
 export class ContactFormComponent {
 
@@ -22,11 +26,9 @@ export class ContactFormComponent {
   public cantones: CantonI[];
   public distritos: DistritoI[];
 
+  clientesObservable : Observable<any[]>
   
   cedula = new FormControl('');
-  
-  
-
   myForm: FormGroup;
   nombre: string;
   apellido1: string;
@@ -37,15 +39,17 @@ export class ContactFormComponent {
   day: number;
   telefono: number;
   sinpe: number;
+  apellido2: string;
+  cedulaA: number;
+  
 
   ngOnInit(){
     this.provincias = this.datasServices.getProvincias();
-    console.log(this.provincias);
   }
 
 
   constructor(
-    public fb: FormBuilder, private datasServices: DatasService
+    public fb: FormBuilder, private datasServices: DatasService, private dataSvc: DataService, private http:HttpClient
   ){
     
     this.myForm = this.fb.group({
@@ -75,13 +79,35 @@ export class ContactFormComponent {
 
   saveData(){
     //Vuelve al home page
-    let jsonMsg = {
-      "Cedula" : this.cedula,
-      "Usuario" : this.username,
+    // let clientJson = new Clientes();
+    // clientJson.Cedula = this.cedulaA;
+    // clientJson.Usuario = this.username;
+    // //clientJson.Nombre_Persona.Primer_Nombre = this.nombre;
+    // //clientJson.Nombre_Persona.Apellido1 = this.apellido1;
+    // //clientJson.Nombre_Persona.Apellido2 = this.apellido2;
+    // clientJson.direccion.Provincia = this.selectedProvinciaA.name,
+    // clientJson.direccion.Canton = this.selectedCantonA.name;
+    // clientJson.direccion.Distrito = this.selectedDistritoA.name;
+    // clientJson.dob.Year = this.year;
+    // clientJson.dob.Mes = this.month;
+    // clientJson.dob.Dia = this.day;
+    // clientJson.telefono = this.telefono;
+    // clientJson.SINPE = this.sinpe;
+    // clientJson.pass = this.password;
+    // clientJson.pedidos = [];
+    // console.log(JSON.stringify(clientJson));
+  //this.dataSvc.addCliente(jsonMsg).subscribe((res : any[])=>{
+  //  console.log(res);
+  //});
+ // }
+
+    var jsonPost = {
+      "Cedula" : 2015023336,
+      "Usuario" : "Gomita",
       "Nombre" : { 
-          "Primer_Nombre" : this.nombre,
-          "Apellido1" : this.apellido1,
-          "Apellido2" : this.apellido2
+          "Primer_Nombre" : "Maesly",
+          "Apellido1" : "Velasquez",
+          "Apellido2" : "Bone"
       },
       "direccion" : {
           "Provincia" : "Limon",
@@ -99,10 +125,16 @@ export class ContactFormComponent {
       "pedidos":  [ 
           2848,
           4562]
+  };
+  console.log(typeof(jsonPost));
+  this.http.post("/api/AddCliente", jsonPost).toPromise().then(data => {console.log('data',data);});
+
   }
-  ;
-  console.log(jsonMsg);
-  }
+
+
+
+
+  
 
   //Guarda la provincia
   onSelect(id:number):void{
@@ -139,9 +171,10 @@ export class ContactFormComponent {
       }
       
     });
-    console.log(this.selectedProvinciaA);
-    console.log(this.selectedCantonA);
-    console.log(this.selectedDistritoA);
+  }
+
+  cedulaSet(cedula:number){
+    this.cedulaA = cedula;
   }
 
   user(usernames:string){
@@ -161,7 +194,7 @@ export class ContactFormComponent {
   }
 
   apellido2Set(apellido2:string){
-    this.apellido1 = apellido2;
+    this.apellido2 = apellido2;
   }
 
   dobSet(dob){

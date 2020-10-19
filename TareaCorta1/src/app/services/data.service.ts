@@ -10,6 +10,7 @@ export class DataService {
 
   private clientesUrl = '/api/CedulaCliente';  
   private usernameUrl = '/api/UsuarioCliente'; 
+  private addclienteURL = '/api/AddCliente';
    
   constructor(private http:HttpClient) { }
   
@@ -25,6 +26,11 @@ export class DataService {
 
   getClients(){
     return this.http.get<any[]>('/api/All/clientes/');
+  }
+
+  //Petición a la base para añadir un cliente (post)
+  addCliente (clientes:Clientes): Observable<Clientes> {
+    return this.http.post<Clientes>(this.addclienteURL, JSON.stringify(clientes));
   }
 
   

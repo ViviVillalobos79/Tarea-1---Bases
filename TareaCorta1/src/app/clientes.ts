@@ -12,9 +12,7 @@ export class Clientes{
     pass: string;
     pedidos: [];
 
-    constructor(nCedula:number, nUsuario:string){
-        this.Cedula = nCedula;
-        this.Usuario = nUsuario;
+    constructor(){
     }
 }
 

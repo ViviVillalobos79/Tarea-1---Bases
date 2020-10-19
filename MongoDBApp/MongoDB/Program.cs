@@ -13,7 +13,7 @@ namespace MongoDB
     {
         static void Main(string[] args)
         {
-            //Este trozo es del servidor
+            //    //Este trozo es del servidor
             HttpServer httpServer;
             if (args.GetLength(0) > 0)
             {
@@ -27,12 +27,12 @@ namespace MongoDB
             thread.Start();
 
             //Este trozo sirve para popular la base de datos si está vacía
-            //Populate populate = new Populate();
-            //populate.productores();
-            //populate.clientes();
-            //populate.cateogiasA();
+        //Populate populate = new Populate();
+        //populate.productores();
+        //populate.clientes();
+        //populate.cateogiasA();
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }

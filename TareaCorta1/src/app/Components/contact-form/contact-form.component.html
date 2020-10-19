@@ -12,7 +12,8 @@
             <div>
                 <!--Contenedor para Ingresar Cedula-->
                 <label for="Cedula"><b>Cédula</b>:</label>
-                <input [(ngModel)] = "cedula" class="form-control" formControlName="cedula" type="number" placeholder="cédula">
+                <input [(ngModel)] = "cedula" class="form-control" formControlName="cedula" type="number" placeholder="cédula"
+                (change)='cedulaSet($event.target.value)'>
             </div>
             <div *ngIf="myForm.get('cedula').errors && myForm.get('cedula').dirty">
                 <p *ngIf="myForm.get('cedula').hasError('required')">Cédula es obligatoria</p>
