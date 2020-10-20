@@ -13,18 +13,19 @@ namespace MongoDB
     {
         static void Main(string[] args)
         {
+           
             //    //Este trozo es del servidor
-            HttpServer httpServer;
-            if (args.GetLength(0) > 0)
-            {
-                httpServer = new MyHttpServer(Convert.ToInt16(args[0]));
-            }
-            else
-            {
-                httpServer = new MyHttpServer(1050);
-            }
-            Thread thread = new Thread(new ThreadStart(httpServer.listen));
-            thread.Start();
+            //HttpServer httpServer;
+            //if (args.GetLength(0) > 0)
+            //{
+            //    httpServer = new MyHttpServer(Convert.ToInt16(args[0]));
+            //}
+            //else
+            //{
+            //    httpServer = new MyHttpServer(1050);
+            //}
+            //Thread thread = new Thread(new ThreadStart(httpServer.listen));
+            //thread.Start();
 
             //Este trozo sirve para popular la base de datos si está vacía
         //Populate populate = new Populate();
@@ -32,7 +33,7 @@ namespace MongoDB
         //populate.clientes();
         //populate.cateogiasA();
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }

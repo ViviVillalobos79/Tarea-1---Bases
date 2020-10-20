@@ -28,7 +28,6 @@ import { FormsModule } from '@angular/forms';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ClientesService } from './clientes.service';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';

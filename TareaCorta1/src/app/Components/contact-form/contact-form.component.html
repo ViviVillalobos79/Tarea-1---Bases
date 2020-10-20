@@ -1,14 +1,14 @@
 <div class="split right">
-    <div class="centered">  
-        <h2>Solcitar Afiliación</h2>   
+    <div class="centered">
+        <h2>Solcitar Afiliación</h2>
       <img class="center"  alt="Responsive image" style="width:300px;height:300px;" src="../../../assets/Images/Image6.png">
     </div>
 </div>
-  
-  
+
+
 <div class="split left">
     <div class="col-md-6 user-container">
-        <form [formGroup]="myForm" (ngSubmit) = "saveData()" novalidate>
+        <form [formGroup]="myForm" (ngSubmit) = "saveData1()" novalidate>
             <div>
                 <!--Contenedor para Ingresar Cedula-->
                 <label for="Cedula"><b>Cédula</b>:</label>
@@ -17,14 +17,12 @@
             </div>
             <div *ngIf="myForm.get('cedula').errors && myForm.get('cedula').dirty">
                 <p *ngIf="myForm.get('cedula').hasError('required')">Cédula es obligatoria</p>
-                <p *ngIf="myForm.get('cedula').hasError('max')">Cédula debe tener 9 dígitos</p>
-                <p *ngIf="myForm.get('cedula').hasError('min')">Cédula debe tener 9 dígitos</p>
             </div>
 
             <div>
                 <!--Contenedor para Ingresar Usuario-->
                 <label for="usuario"><b>Usuario</b>:</label>
-                <input class="form-control" formControlName="usuario" type="text" placeholder="Sebastian2" 
+                <input class="form-control" formControlName="usuario" type="text" placeholder="Sebastian2"
                 (change)=user($event.target.value)>
             </div>
             <div *ngIf="myForm.get('usuario').errors && myForm.get('usuario').dirty">
@@ -74,10 +72,10 @@
             <div *ngIf="myForm.get('apellido2').errors && myForm.get('apellido2').dirty">
                 <p *ngIf="myForm.get('apellido2').hasError('required')">Segundo Apellido es obligatorio</p>
             </div>
-            
+
             <div>
                 <label for="provincia"><b>Provincia</b>:</label>
-                <select [(ngModel)] = "selectedProvincia.id" class="form-control" formControlName="provincia" 
+                <select [(ngModel)] = "selectedProvincia.id" class="form-control" formControlName="provincia"
                 (change)="onSelect($event.target.value)">
                     <option *ngFor= "let provincia of provincias" value={{provincia.id}}>
                         {{provincia.name}}
@@ -87,7 +85,7 @@
 
             <div *ngIf="cantones?.length > 1">
                 <label for="canton"><b>Cantón</b>:</label>
-                <select [(ngModel)] = "selectedCanton.id" class="form-control" id= "canton" formControlName="canton" 
+                <select [(ngModel)] = "selectedCanton.id" class="form-control" id= "canton" formControlName="canton"
                 (change)="onSelect2($event.target.value)">
                     <option *ngFor= "let canton of cantones" value={{canton.id}}>
                         {{canton.name}}
@@ -97,7 +95,7 @@
 
             <div *ngIf="distritos?.length > 0">
                 <label for="distrito"><b>Distrito</b>:</label>
-                <select [(ngModel)] = "selectedDistrito.id" class="form-control" formControlName="distrito" 
+                <select [(ngModel)] = "selectedDistrito.id" class="form-control" formControlName="distrito"
                 (change)="onSelect3($event.target.value)">
                     <option *ngFor= "let distrito of distritos" value={{distrito.id}}>
                         {{distrito.name}}
@@ -108,37 +106,32 @@
             <div>
                 <!--Contenedor para DOB-->
                 <label for="dob"><b>Fecha de nacimiento</b>:</label>
-                <input class="form-control" formControlName="dob" type="date" placeholder="DOB" 
+                <input class="form-control" formControlName="dob" type="date" placeholder="DOB"
                 (change)='dobSet($event.target.value)'>
             </div>
 
             <div>
                 <!--Contenedor para Teléfono-->
                 <label for="telefono"><b>Número de Teléfono</b>:</label>
-                <input class="form-control" formControlName="telefono" type="number" placeholder="telefono"
+                <input class="form-control" formControlName="telefono" type="text" placeholder="telefono"
                 (change)='telefonoSet($event.target.value)'>
             </div>
             <div *ngIf="myForm.get('telefono').errors && myForm.get('telefono').dirty">
-                <p *ngIf="myForm.get('telefono').hasError('required')">Número de teléfono es obligatorio</p>
-                <p *ngIf="myForm.get('telefono').hasError('max')">El número de teléfono debe tener 8 dígitos y ser válido</p>
-                <p *ngIf="myForm.get('telefono').hasError('min')">El número de teléfono debe tener 8 dígitos y ser válido</p>
-            </div>
+              <p *ngIf="myForm.get('telefono').hasError('required')">Número de teléfono es obligatorio</p>
+          </div>
 
             <div>
                 <!--Contenedor para SINPE-->
                 <label for="sinpe"><b>Número de SINPE</b>:</label>
-                <input class="form-control" formControlName="sinpe" type="number" placeholder="sinpe"
+                <input class="form-control" formControlName="sinpe" type="text" placeholder="sinpe"
                 (change)='sinpeSet($event.target.value)'>
             </div>
             <div *ngIf="myForm.get('sinpe').errors && myForm.get('sinpe').dirty">
                 <p *ngIf="myForm.get('sinpe').hasError('required')">Número de sinpe es obligatorio</p>
-                <p *ngIf="myForm.get('sinpe').hasError('max')">El número de sinpe debe tener 8 dígitos y ser válido</p>
-                <p *ngIf="myForm.get('sinpe').hasError('min')">El número de sinpe debe tener 8 dígitos y ser válido</p>
             </div>
-            
- 
+
             <div>
-                <button type="submit" >Save</button>
+                <button type="submit"  >Save</button>
             </div>
 
         </form>

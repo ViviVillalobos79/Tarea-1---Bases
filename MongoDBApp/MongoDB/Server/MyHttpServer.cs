@@ -500,21 +500,22 @@ namespace MongoDB
             //Ejemplo: localhost:1050/AddCliente
             if (p.http_url == "/api/AddCliente")
             {
-                var valor2 = JsonSerializer.Deserialize<Cliente2>(data);
-                var valor = new Cliente
-                {
-                    Cedula = valor2.Cedula,
-                    Usuario = valor2.Usuario,
-                    Nombre = valor2.Nombre,
-                    direccion = valor2.direccion,
-                    dob = valor2.dob,
-                    telefono = valor2.telefono,
-                    SINPE = valor2.SINPE,
-                    pass = valor2.pass,
-                    pedidos = valor2.pedidos
-                };            
+                Console.WriteLine("hola");
+                //var valor2 = JsonSerializer.Deserialize<Cliente2>(data);
+                //var valor = new Cliente
+                //{
+                //    Cedula = valor2.Cedula,
+                //    Usuario = valor2.Usuario,
+                //    Nombre = valor2.Nombre,
+                //    direccion = valor2.direccion,
+                //    dob = valor2.dob,
+                //    telefono = valor2.telefono,
+                //    SINPE = valor2.SINPE,
+                //    pass = valor2.pass,
+                //    pedidos = valor2.pedidos
+                //};            
 
-                db.InsertRecord<Cliente>("Clientes", valor);
+                //db.InsertRecord<Cliente>("Clientes", valor);
             }
 
             //Adiciona un productor en la tabla si no hay ningún otro con el mismo número de cédula

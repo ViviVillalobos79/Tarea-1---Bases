@@ -1,19 +1,17 @@
 /**
  * Formato del json para la tabla Clientes
  */
-export class Clientes{
-    Cedula: number;
-    Usuario: string;
-    Nombre_Persona: {Primer_Nombre:string,Apellido1: string, Apellido2:string};
-    direccion: {Provincia: string, Canton: string, Distrito: string};
-    dob: {Dia: number, Mes: number, Year: number};
-    telefono: number;
-    SINPE: number;
-    pass: string;
-    pedidos: [];
+ export class Cliente23{
+     Cedula: number;
+     Usuario: string;
+     Nombre_Persona: Nombre_Persona;
+     direccion: Direccion;
+     dob: DOB;
+     telefono: number;
+     SINPE: number;
+     pass: string;
+     pedidos: [];
 
-    constructor(){
-    }
 }
 
 /**
