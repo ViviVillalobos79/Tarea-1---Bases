@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-feedback-pres',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackPresComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _route: ActivatedRoute) {
+    console.log(this._route.snapshot.paramMap.get('id'));
+   }
 
   ngOnInit(): void {
   }

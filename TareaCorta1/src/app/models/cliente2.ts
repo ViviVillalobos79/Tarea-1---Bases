@@ -9,6 +9,4 @@ export class Cliente2{
     pass:string;
     aceptado:boolean;
     pedidos:number[];
-
-
 }

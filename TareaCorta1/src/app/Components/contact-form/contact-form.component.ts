@@ -47,6 +47,7 @@ export class ContactFormComponent {
   sinpe: string;
   apellido2: string;
   cedulaA: string;
+  rolA:string;
 
   USERS_DATA = [];
 
@@ -88,6 +89,7 @@ export class ContactFormComponent {
       dob: ['', [Validators.required]],
       telefono: ['', [Validators.required]],
       sinpe: ['', [Validators.required]],
+      rol: ['', [Validators.required]]
     });
 
     // this.clientSvc.getClients().subscribe((res : Cliente2[])=>{
@@ -290,5 +292,8 @@ export class ContactFormComponent {
 
   sinpeSet(sinpe: string) {
     this.sinpe = sinpe;
+  }
+  rolSet(rol){
+    this.rolA = rol;
   }
 }

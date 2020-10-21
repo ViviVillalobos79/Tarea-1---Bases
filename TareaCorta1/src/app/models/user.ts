@@ -1,8 +1,7 @@
-export class User {
-  public id: number;
-  public name: string;
-  public surname: string;
-  public email: string;
-  public username: string;
-  public password?: string;
+export interface UserI{
+  Cedula:string;
+  Usuario:string;
+  pass:string;
+  aceptado:boolean;
+  login:boolean;
 }

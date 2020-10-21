@@ -23,7 +23,7 @@ import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
 
 //* en este modulo se importan las vistas para agregarles un nombre de dirección y asignarle un componente
- 
+
 const routes: Routes = [
 {
   path: 'home',
@@ -95,7 +95,7 @@ const routes: Routes = [
   component: CarritoCompras
 },
 {
-  path: 'feedbackPres',
+  path: 'feedbackPres/:id',
   component: FeedbackPresComponent
 },
 {
@@ -113,6 +113,11 @@ const routes: Routes = [
 {
   path: 'signin',
   component: ContactFormComponent
+},
+{
+  path:'**',
+  redirectTo: 'home',
+  pathMatch: 'full'
 },
 ];
 
