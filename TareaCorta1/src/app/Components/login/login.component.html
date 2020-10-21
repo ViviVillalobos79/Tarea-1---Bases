@@ -3,16 +3,16 @@
     <mat-card class="cardLogin">
         <h1 class="text"> Iniciar sesión</h1>
         <mat-card-content class="log">
-            <!-- Se agregan formControls para acceder a la informacaion ingresada por el usuario
+            <!-- Se agregan formControls para acceder a la informacaion ingresada por el usuario 
                 por medio de las variables que guardan el valor del form-->
             <mat-form-field appearance="form" class="form">
-                <input matInput type="text" [formControl]="name" ng model = "@username" placeholder="Correo electrónico" required/>
+                <input matInput type="text" [formControl]="name" ng model = "@username" placeholder="Usuario" required/>
             </mat-form-field>
 
             <mat-form-field appearance="form" class="form">
                 <input matInput type="password" [formControl]="pass" ng model = "@userpassword" placeholder="Contraseña" required/>
             </mat-form-field>
-            <button mat-button class="btn-login"  [routerLink]="['/feedbackPres', '1']"  >
+            <button mat-button class="btn-login" (click) = "validate()" [routerLink]="'/home'"  >
                 <h3>Ingresar</h3>
             </button>
         </mat-card-content>

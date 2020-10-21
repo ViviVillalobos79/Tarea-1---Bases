@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Administrador } from './Components/administrador/administrador.component'
 import { Productor } from './Components/productor/productor.component';
-import { Afiliacion } from './Components/afiliacion/afiliacion.component';
 import { GestionProdsClientes } from './Components/gestionprodsclientes/gestionprodsclientes.component';
 import { GestionCategorias } from './Components/gestioncategorias/gestioncategorias.component';
 import { GestionProductos } from './Components/gestionproductos/gestionproductos.component';
 import { Categorias } from './Components/categorias/categorias.component';
-import { Reportes } from './Components/reportes/reportes.component';
 import { AgregarProds } from './Components/agregarprods/agregarprods.component';
 import { Pedidos } from './Components/pedidos/pedidos.component';
 import { AdminAfiliados } from './Components/adminafiliados/adminafiliados.component';
@@ -18,12 +16,10 @@ import { CarritoCompras } from './Components/carritocompras/carritocompras.compo
 import { TramosComponent } from './Components/tramos/tramos.component';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
-import { RegistrationComponent } from './Components/registration/registration.component';
-import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
 
 //* en este modulo se importan las vistas para agregarles un nombre de dirección y asignarle un componente
-
+ 
 const routes: Routes = [
 {
   path: 'home',
@@ -43,10 +39,6 @@ const routes: Routes = [
   component: Productor
 },
 {
-  path: 'afiliacion',
-  component: Afiliacion
-},
-{
   path: 'gestionprodsclientes',
   component: GestionProdsClientes
 },
@@ -61,10 +53,6 @@ const routes: Routes = [
 {
   path: 'categorias',
   component: Categorias
-},
-{
-  path: 'reportes',
-  component: Reportes
 },
 {
   path: 'agregarprods',
@@ -83,20 +71,12 @@ const routes: Routes = [
   component: Login
 },
 {
-  path: 'registration',
-  component: RegistrationComponent
-},
-{
   path: 'tramoproductor',
   component: TramoProductor
 },
 {
   path: 'carritocompras',
   component: CarritoCompras
-},
-{
-  path: 'feedbackPres/:id',
-  component: FeedbackPresComponent
 },
 {
   path: 'tramos',
@@ -113,11 +93,6 @@ const routes: Routes = [
 {
   path: 'signin',
   component: ContactFormComponent
-},
-{
-  path:'**',
-  redirectTo: 'home',
-  pathMatch: 'full'
 },
 ];
 

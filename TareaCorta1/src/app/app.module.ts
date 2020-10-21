@@ -10,12 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Administrador } from './Components/administrador/administrador.component'
 import { Productor } from './Components/productor/productor.component'
-import { Afiliacion } from './Components/afiliacion/afiliacion.component';
 import { GestionProdsClientes } from './Components/gestionprodsclientes/gestionprodsclientes.component';
 import { GestionCategorias } from './Components/gestioncategorias/gestioncategorias.component';
 import { GestionProductos } from './Components/gestionproductos/gestionproductos.component';
 import { Categorias } from './Components/categorias/categorias.component';
-import { Reportes } from './Components/reportes/reportes.component';
 import { AgregarProds } from './Components/agregarprods/agregarprods.component';
 import { Pedidos } from './Components/pedidos/pedidos.component';
 import { AdminAfiliados } from './Components/adminafiliados/adminafiliados.component';
@@ -28,8 +26,6 @@ import { FormsModule } from '@angular/forms';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegistrationComponent } from './Components/registration/registration.component';
-import { FeedbackPresComponent } from './Components/feedback-pres/feedback-pres.component';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
 
 
@@ -42,12 +38,10 @@ como por ejemplo los componentes de angular, asi mismo se importan los component
     AppComponent,
     Administrador,
     Productor,
-    Afiliacion,
     GestionProdsClientes,
     GestionCategorias,
     GestionProductos,
     Categorias,
-    Reportes,
     AgregarProds,
     Pedidos,
     AdminAfiliados,
@@ -58,9 +52,7 @@ como por ejemplo los componentes de angular, asi mismo se importan los component
     TramosComponent,
     FeedbackComponent,
     ComprobanteComponent,
-    RegistrationComponent,
-    FeedbackPresComponent,
-    ContactFormComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
