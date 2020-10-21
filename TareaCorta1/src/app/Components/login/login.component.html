@@ -8,11 +8,17 @@
             <mat-form-field appearance="form" class="form">
                 <input matInput type="text" [formControl]="name" ng model = "@username" placeholder="Usuario" required/>
             </mat-form-field>
-
             <mat-form-field appearance="form" class="form">
                 <input matInput type="password" [formControl]="pass" ng model = "@userpassword" placeholder="Contraseña" required/>
             </mat-form-field>
-            <button mat-button class="btn-login" (click) = "validate()" [routerLink]="'/home'"  >
+            <div class="rol"> 
+                <label for="rol"><b>Selecciona tu rol</b>:</label>
+                <select class="form-control" formControlName="rol">
+                <option value="productor">Productor</option>
+                <option value="cliente">Cliente</option>
+                </select>
+            </div>
+            <button mat-button class="btn-login" (click) = "validate()" [routerLink]="['/cliente','Viviana123']"  >
                 <h3>Ingresar</h3>
             </button>
         </mat-card-content>

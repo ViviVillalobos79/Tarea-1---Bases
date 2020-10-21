@@ -1,0 +1,51 @@
+<header class="header">
+  <img class="logoContainer" mat-card-image src="../../../assets/Images/logo.png">
+  <div class="botones">
+
+    <button mat-button class="btnRes" [routerLink]="['/tramos','Viviana123']">
+      <h3>
+        Tramos
+      </h3>
+    </button>
+
+    <button mat-button class="btnRes" [routerLink]="['/carritocompras','Viviana123']">
+      <h3>
+        Carrito
+      </h3>
+    </button>
+    
+    <button mat-button class="btnLog" [routerLink]="'/home'">
+      <h3>
+        Log out
+      </h3>
+    </button>
+  </div>
+</header>
+<div class="body">
+
+  <div class="carousel">
+
+    <button mat-flat-button (click)="left()">
+      <img src="../../../assets/Images/Polygon 1.png" />
+    </button>
+
+    <mat-card class="imgs">
+      <img mat-card-image src="{{ img[i] }}"/>
+    </mat-card>
+
+    <button mat-flat-button (click)="right()">
+      <img src="../../../assets/Images/Polygon 2.png" />
+    </button>
+  
+  </div>
+  <div class="dist">
+    <h1>Productores toda Costa Rica</h1>
+    <div class="fila">
+      <div class="map">
+        <img src="../../../assets/Images/image 32.png" />
+      </div>
+      <!--aqui van los botones de tramos-->
+    </div>
+    
+  </div>
+</div>

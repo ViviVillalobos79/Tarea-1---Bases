@@ -17,6 +17,7 @@ import { TramosComponent } from './Components/tramos/tramos.component';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
+import { VistaClienteComponent } from './Components/vistacliente/vistacliente.component'
 
 //* en este modulo se importan las vistas para agregarles un nombre de dirección y asignarle un componente
  
@@ -35,7 +36,7 @@ const routes: Routes = [
   component: Administrador
 },
 {
-  path: 'productor',
+  path: 'productor/:id',
   component: Productor
 },
 {
@@ -59,10 +60,6 @@ const routes: Routes = [
   component: AgregarProds
 },
 {
-  path: 'pedidos',
-  component: Pedidos
-},
-{
   path: 'adminafiliados',
   component: AdminAfiliados
 },
@@ -71,23 +68,27 @@ const routes: Routes = [
   component: Login
 },
 {
-  path: 'tramoproductor',
+  path: 'tramoproductor/:id',
   component: TramoProductor
 },
 {
-  path: 'carritocompras',
+  path: 'cliente/:id',
+  component: VistaClienteComponent
+},
+{
+  path: 'carritocompras/:id',
   component: CarritoCompras
 },
 {
-  path: 'tramos',
+  path: 'tramos/:id',
   component: TramosComponent
 },
 {
-  path: 'feedback',
+  path: 'feedback/:id',
   component: FeedbackComponent
 },
 {
-  path: 'comprobante',
+  path: 'comprobante/:id',
   component: ComprobanteComponent
 },
 {

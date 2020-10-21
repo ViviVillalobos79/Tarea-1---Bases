@@ -27,6 +27,7 @@ import { FeedbackComponent } from './Components/feedback/feedback.component';
 import { ComprobanteComponent } from './Components/comprobante/comprobante.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactFormComponent } from './Components/contact-form/contact-form.component';
+import { VistaClienteComponent } from './Components/vistacliente/vistacliente.component';
 
 
 /* en este modulo se importa todo lo necesario para la implementacion de la solucion referente al FrontEnd
@@ -52,7 +53,8 @@ como por ejemplo los componentes de angular, asi mismo se importan los component
     TramosComponent,
     FeedbackComponent,
     ComprobanteComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    VistaClienteComponent
   ],
   imports: [
     BrowserModule,

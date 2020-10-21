@@ -61,3 +61,7 @@ Para acomodar los contenedores de cada vista se utiliza flexbox segun correspond
     border-radius: 16px;
     color: #FFFFFF;
 }
+
+.rol{
+    padding-bottom: 10px;
+}
