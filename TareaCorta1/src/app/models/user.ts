@@ -4,4 +4,5 @@ export interface UserI{
   pass:string;
   aceptado:boolean;
   login:boolean;
+  rol:string;
 }

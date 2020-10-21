@@ -137,7 +137,8 @@ namespace WebApiMarket.Repositorios
                 Usuario = cliente.Usuario,
                 pass = cliente.pass,
                 aceptado = cliente.aceptado,
-                login = (cliente.pass == password)
+                login = (cliente.pass == password),
+                rol = "Cliente"
             };
 
             return usuario;

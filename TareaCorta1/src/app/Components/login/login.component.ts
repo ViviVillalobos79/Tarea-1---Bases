@@ -14,6 +14,7 @@ export class Login{
     // FormControl es un elemento de control que permite el manejo de los datos ingresados por el usuario
   name = new FormControl('');
   pass = new FormControl('');
+  rolA:string;
 
   //Consigue los usuarios válidos para el login del REST
   client;
@@ -27,7 +28,11 @@ export class Login{
       console.log(this.USERS_DATA);
     })
   }
-    
+
+  rolSet(rol){
+    this.rolA = rol;
+  }
+
 
   validate() : void{
     var user = this.name.value;
@@ -56,5 +61,5 @@ export class Login{
     }
   }
 
-    
+
 }

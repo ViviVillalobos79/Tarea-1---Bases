@@ -1,4 +1,3 @@
-import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -13,13 +12,16 @@ import { Observable } from 'rxjs';
 import { Cliente2 } from '../../models/cliente2';
 import { HttpClient } from '@angular/common/http';
 import { ClientService } from '../../services/client.service';
-import { Client } from 'src/app/models/client';
+import { Productor2 } from 'src/app/models/productor2';
+import {ProductorServiceService} from '../../services/productor-service.service'
+import { Router} from '@angular/router'
+
 
 @Component({
   selector: 'contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css'],
-  providers: [DatasService, DataService, ClientService],
+  providers: [DatasService, DataService, ClientService, ProductorServiceService],
 })
 export class ContactFormComponent {
   public selectedProvincia: ProvinciaI = { id: 0, name: '' };
@@ -59,8 +61,10 @@ export class ContactFormComponent {
     public fb: FormBuilder,
     protected clientSvc: ClientService,
     private datasServices: DatasService,
+    private productorService: ProductorServiceService,
     private dataSvc: DataService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     this.myForm = this.fb.group({
       cedula: ['', [Validators.required]],
@@ -103,7 +107,7 @@ export class ContactFormComponent {
     return ced_len != 9;
   }
 
-  saveData1() {
+  generateClient(){
     let cliente2 = new Cliente2();
 
     cliente2.Cedula = this.cedulaA;
@@ -124,83 +128,39 @@ export class ContactFormComponent {
     });
   }
 
-  saveData() {
-    // let client = new Cliente2();
-    // client.Cedula = this.cedulaA;
-    // client.Usuario = this.username;
-    // client.Nombre_Persona = {Primer_Nombre: this.nombre,
-    //                             Apellido1: this.apellido1,
-    //                             Apellido2:this.apellido2 };
-    //                             client.direccion = {Provincia:this.selectedProvinciaA.name,
-    //                         Canton:this.selectedCantonA.name,
-    //                         Distrito:this.selectedDistritoA.name};
-    // client.dob = {Dia:this.day, Mes:this.month, Year:this.year};
-    // client.telefono = this.telefono;
-    // client.SINPE = this.sinpe;
-    // client.pass = this.password;
-    // client.pedidos = [];
+  generateProductor(){
+    let productor2 = new Productor2();
 
-    // this.clientSvc.addClient(client).subscribe((res : Cliente2)=>{
-    //    console.log(res);
-    //   });
+    productor2.Cedula = this.cedulaA;
+    productor2.Usuario = this.username;
+    productor2.Nombre = [this.nombre, this.apellido1, this.apellido2];
+    productor2.direccion = [this.selectedProvinciaA.name,
+                          this.selectedCantonA.name,
+                          this.selectedDistritoA.name];
+    productor2.dob = [this.day, this.month, this.year];
+    productor2.telefono = this.telefono;
+    productor2.SINPE = this.sinpe;
+    productor2.pass = this.password;
+    productor2.aceptado = false;
+    productor2.pedidos = [];
+    productor2.productos = [];
 
-    let clientes = new Client();
-    clientes.Id = 4;
-    clientes.Nombre = 'vivi';
-    clientes.Apellido = 'villa';
-
-    this.clientSvc.addCliente(clientes).subscribe((res: Client) => {
+    this.productorService.addProdutor(productor2).subscribe((res: Productor2) => {
       console.log(res);
     });
 
-    //this.dataSvc.addCliente(clientJson).subscribe((res : any[])=>{
-    //console.log(res);
-    //});
-
-    var jsonPost = {
-      Cedula: 2015023336,
-      Usuario: 'Gomita',
-      Nombre: {
-        Primer_Nombre: 'Maesly',
-        Apellido1: 'Velasquez',
-        Apellido2: 'Bone',
-      },
-      direccion: {
-        Provincia: 'Limon',
-        Canton: 'Pococi',
-        Distrito: 'Guapiles',
-      },
-      dob: {
-        Dia: 3,
-        Mes: 9,
-        Year: 1996,
-      },
-      telefono: 61682819,
-      SINPE: 88566646,
-      pass: 'yellow68',
-      pedidos: [2848, 4562],
-    };
-    //console.log(typeof(jsonPost));
   }
 
-  saveData2() {
-    let client = new Cliente2();
-    client.Cedula = this.cedulaA;
-    client.Usuario = this.username;
-    client.Nombre = [this.nombre, this.apellido1, this.apellido2];
-    client.direccion = [this.selectedProvinciaA.name, this.selectedCantonA.name, this.selectedDistritoA.name];
-    client.dob = [this.day, this.month, this.year];
-    client.telefono = this.telefono;
-    client.SINPE = this.sinpe;
-    client.pass = this.password;
-    client.pedidos = [];
-
-    console.log(client);
-
-    this.clientSvc.addClient(client).subscribe((res: Cliente2) => {
-      console.log(res);
-    });
+  saveData1() {
+    if (this.rolA == "cliente"){
+      this.generateClient();
+    }
+    if (this.rolA == "productor"){
+      this.generateProductor();
+    }
+    this.router.navigate(['home']);
   }
+
 
   //Guarda la provincia
   onSelect(id: number): void {

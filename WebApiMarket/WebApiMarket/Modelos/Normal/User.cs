@@ -12,5 +12,6 @@ namespace WebApiMarket.Modelos.Normal
         public string pass { get; set; }
         public bool aceptado { get; set; }
         public bool login { get; set; }
+        public string rol { get; set; }
     }
 }

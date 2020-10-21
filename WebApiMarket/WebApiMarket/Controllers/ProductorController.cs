@@ -86,7 +86,8 @@ namespace WebApiMarket.Controllers
                 Usuario = productor.Usuario,
                 pass = productor.pass,
                 aceptado = productor.aceptado,
-                login = (productor.pass == password)
+                login = (productor.pass == password),
+                rol = "Productor"
             };
 
             return Ok(usuario);
