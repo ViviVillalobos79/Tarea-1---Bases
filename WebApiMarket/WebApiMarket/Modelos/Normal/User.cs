@@ -7,8 +7,8 @@ namespace WebApiMarket.Modelos.Normal
 {
     public class User
     {
-        public string Cedula { get; set; }
-        public string Usuario { get; set; }
+        public string cedula { get; set; }
+        public string usuario { get; set; }
         public string pass { get; set; }
         public bool aceptado { get; set; }
         public bool login { get; set; }

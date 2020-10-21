@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Client } from '../models/client';
 import { Cliente2 } from '../models/cliente2';
-import { UserI } from '../models/user';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,9 +27,9 @@ export class ClientService {
     return this.http.post<Cliente2>( this.clientAddUrl, client);
   }
 
-  authProductor(username:string, password:string){
+  authCliente(username:string, password:string){
     const url = '/api/Client/Usuario/'+ username + '/' +password;
-    return this.http.get<UserI>(url);
+    return this.http.get<User>(url);
   }
 
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Productor2 } from '../models/productor2';
-import { UserI } from '../models/user';
+import { User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class ProductorServiceService {
 
   authProductor(username:string, password:string){
     const url = '/api/Productor/Usuario/'+ username + '/' +password;
-    return this.http.get<UserI>(url);
+    return this.http.get<User>(url);
   }
 
 }

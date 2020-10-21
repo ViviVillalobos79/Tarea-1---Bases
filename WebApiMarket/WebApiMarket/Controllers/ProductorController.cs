@@ -82,8 +82,8 @@ namespace WebApiMarket.Controllers
 
             var usuario = new User
             {
-                Cedula = productor.Cedula,
-                Usuario = productor.Usuario,
+                cedula = productor.Cedula,
+                usuario = productor.Usuario,
                 pass = productor.pass,
                 aceptado = productor.aceptado,
                 login = (productor.pass == password),
