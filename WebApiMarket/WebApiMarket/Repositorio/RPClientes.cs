@@ -90,6 +90,33 @@ namespace WebApiMarket.Repositorios
 
             return clientes2;
         }
+        public List<Productor2> getAllProductores()
+        {
+            var productores = db.LoadRecords<Productor>("Productores");
+            var productores2 = new List<Productor2> { };
+            foreach (var productor in productores)
+            {
+                var productor2 = new Productor2
+                {
+                    Cedula = productor.Cedula.ToString(),
+                    Usuario = productor.Usuario,
+                    Nombre = productor.Nombre,
+                    direccion = productor.direccion,
+                    dob = productor.dob,
+                    telefono = productor.telefono.ToString(),
+                    SINPE = productor.SINPE.ToString(),
+                    pass = productor.pass,
+                    aceptado = productor.aceptado,
+                    productos = productor.productos,
+                    pedidos = productor.pedidos
+                };
+
+                productores2.Add(productor2);
+
+            }
+
+            return productores2;
+        }
 
         public User auth(string username, string password)
         {
