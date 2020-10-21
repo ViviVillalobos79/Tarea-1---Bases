@@ -39,12 +39,23 @@
   
   </div>
   <div class="dist">
-    <h1>Productores toda Costa Rica</h1>
+    <h1>Productores en el distrito</h1>
     <div class="fila">
       <div class="map">
         <img src="../../../assets/Images/image 32.png" />
       </div>
-      <!--aqui van los botones de tramos-->
+      <div class="tramos"> 
+        <div *ngFor="let tramo of tramos">
+          <mat-card class="productor">
+              <h3>{{ tramo }} &nbsp;</h3>
+              <button mat-button class="btnV" [routerLink]="['/tramoproductor','Viviana123']">
+                  <h3>
+                  Visitar
+                  </h3>
+              </button>
+          </mat-card>
+        </div> 
+      </div>
     </div>
     
   </div>

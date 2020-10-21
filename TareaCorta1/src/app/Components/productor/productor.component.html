@@ -7,21 +7,37 @@
             </h1>
         </mat-card>
     </div>
-    <div class="botones">
-        <button mat-button class="btn" [routerLink]="'/gestionproductos'">
-          <h5>
-            Gestion de Productos
-          </h5>
-        </button>
-        <button mat-button class="btn" [routerLink]="'/pedidos'">
-          <h3>
-            Pedidos
-          </h3>
-        </button>
-        <button mat-button class="btn" [routerLink]="'/afiliacion'">
-          <h5>
-            Solicitud de Afiliacion
-          </h5>
-        </button>
-    </div>
+    <div class="conCar">
+      <div class="botones">
+          <button mat-button class="btn" [routerLink]="['/gestionproductos','Viviana123']">
+            <h5>
+              Gestion de Productos
+            </h5>
+          </button>
+          <button mat-button class="btn" [routerLink]="['/pedidos','Viviana123']">
+            <h3>
+              Pedidos
+            </h3>
+          </button>
+          <button mat-button class="btnLo" [routerLink]="'/home'">
+            <h3>
+              Log out
+            </h3>
+          </button>
+          </div>
+          <div class="carousel">
+
+            <button mat-flat-button (click)="left()">
+              <img src="../../../assets/Images/Polygon 1.png" />
+            </button>
+        
+            <mat-card class="imgs">
+              <img mat-card-image src="{{ img[i] }}"/>
+            </mat-card>
+        
+            <button mat-flat-button (click)="right()">
+              <img src="../../../assets/Images/Polygon 2.png" />
+            </button>
+          </div>
+    </div>  
 </div>

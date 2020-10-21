@@ -18,12 +18,14 @@ h1{
     display: flex;
     justify-content: center;
     color: #3FC5D8;
+    padding-top: 300px;
 
 }
 .botones{
 	display: flex;
     flex-direction: row;
-	justify-content: space-between;
+    justify-content: space-between;
+    padding-right: 300px;
 }
 .btn{
 	background-color: #3FC5D8;
@@ -34,4 +36,24 @@ h1{
 	border-radius: 10px;
 	color: #FFFFFF;
 }
-
+.carousel{
+	display: flex;
+    flex-direction: row;
+	justify-content: center;
+	align-items: center;
+    height: 393px;
+    padding-top: 100px;
+	padding-right: 300px;
+	
+}
+.imgs{
+	width: 384px;
+	height: 293px;
+	background: #FFFFFF;
+	border-radius: 10px;
+	margin: 20px;
+}
+.conCar{
+	display: flex;
+    flex-direction: column;
+}

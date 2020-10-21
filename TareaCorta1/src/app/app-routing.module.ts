@@ -48,7 +48,7 @@ const routes: Routes = [
   component: GestionCategorias
 },
 {
-  path: 'gestionproductos',
+  path: 'gestionproductos/:id',
   component: GestionProductos
 },
 {
@@ -56,8 +56,12 @@ const routes: Routes = [
   component: Categorias
 },
 {
-  path: 'agregarprods',
+  path: 'agregarprods/:id',
   component: AgregarProds
+},
+{
+  path: 'pedidos/:id',
+  component: Pedidos
 },
 {
   path: 'adminafiliados',

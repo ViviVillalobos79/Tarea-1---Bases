@@ -7,27 +7,35 @@
             </h1>
         </mat-card>
     </div>
-    <div class="botones">
-      <!-- Se crean botones para redireccionar a la vista deseada-->
-        <button mat-button class="btn" [routerLink]="'/gestionprodsclientes'">
-          <h5>
-            Gestión de Productos
-          </h5>
-        </button>
-        <button mat-button class="btn" [routerLink]="'/categorias'">
-          <h3>
-            Categoría
-          </h3>
-        </button>
-        <button mat-button class="btn" [routerLink]="'/adminafiliados'">
-          <h5>
-            Administrar Afiliación
-          </h5>
-        </button>
-        <button mat-button class="btn" [routerLink]="'/reportes'">
-          <h3>
-            Reportes
-          </h3>
-        </button>
+    <div class="conCar">
+      <div class="botones">
+        <!-- Se crean botones para redireccionar a la vista deseada-->
+          <button mat-button class="btn" [routerLink]="'/categorias'">
+            <h3>
+              Categoría
+            </h3>
+          </button>
+          <button mat-button class="btn" [routerLink]="'/adminafiliados'">
+            <h5>
+              Administrar Afiliación
+            </h5>
+          </button>
+        </div>
+          <div class="carousel">
+
+            <button mat-flat-button (click)="left()">
+              <img src="../../../assets/Images/Polygon 1.png" />
+            </button>
+        
+            <mat-card class="imgs">
+              <img mat-card-image src="{{ img[i] }}"/>
+            </mat-card>
+        
+            <button mat-flat-button (click)="right()">
+              <img src="../../../assets/Images/Polygon 2.png" />
+            </button>
+          
+          </div>
+      
     </div>
 </div>

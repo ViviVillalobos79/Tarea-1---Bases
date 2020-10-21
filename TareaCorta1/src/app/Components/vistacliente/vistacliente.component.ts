@@ -7,6 +7,9 @@ import {Component, OnInit} from '@angular/core'
 })
 
 export class VistaClienteComponent{
+    tramos=["Productor 1",
+          "Productor 2",
+          "Productor 3"]
     i=0;
     img=["../../../assets/Images/Image1.png",
             '../../../assets/Images/Image2.png',
