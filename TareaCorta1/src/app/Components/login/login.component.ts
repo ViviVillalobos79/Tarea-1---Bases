@@ -8,6 +8,7 @@ import { Router} from '@angular/router'
 import { User } from 'src/app/models/user';
 import { Productor2 } from 'src/app/models/productor2';
 import { Cliente2 } from 'src/app/models/cliente2';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'login',
@@ -23,6 +24,8 @@ export class Login{
   rolA:string;
   user:string;
   pw:string;
+  eAceptado = false;
+  eLogin = false;
 
   usuario: User;
 
@@ -83,16 +86,29 @@ export class Login{
   }
 
   auth(user: User){
-    console.log(user)
+
+    this.eAceptado = false;
+    this.eLogin = false;
     if(user.login && user.aceptado){
       console.log(user.rol);
-       if(user.rol = "Cliente"){
+       if(user.rol == "Cliente"){
          this.router.navigate(['cliente',user.cedula]);
       }
-      if(user.rol = "Productor"){
+      else if(user.rol == "Productor"){
         this.router.navigate(['productor',user.cedula]);
      }
-   }
+    }
+
+    else if(!user.aceptado){
+        this.eAceptado = true;
+    }
+
+    else if(!user.login){
+      console.log("error login");
+      this.eLogin = true;
+    }
+
+
   }
 
 

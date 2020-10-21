@@ -3,6 +3,12 @@
     <mat-card class="cardLogin">
         <h1 class="text"> Iniciar sesión</h1>
         <mat-card-content class="log">
+          <div *ngIf= "eAceptado" >
+            Error usted aun no ha sido aceptado o aun no tiene cuenta
+          </div>
+          <div *ngIf= "eLogin">
+            Error usuario o contraseña no coinciden
+          </div>
             <!-- Se agregan formControls para acceder a la informacaion ingresada por el usuario
                 por medio de las variables que guardan el valor del form-->
             <mat-form-field appearance="form" class="form">
