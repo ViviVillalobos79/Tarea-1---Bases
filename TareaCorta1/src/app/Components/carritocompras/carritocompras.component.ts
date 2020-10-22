@@ -11,40 +11,21 @@ export class CarritoCompras{
     feedbackProducto: string;
     constructor(){}
 
-    compras = [{"Producto":"Maíz","Cantidad":1,"Precio":13},
-                {"Producto":"Papa","Cantidad":2,"Precio":12},
-                {"Producto":"Pepino","Cantidad":1,"Precio":23},
-                {"Producto":"Pimentón","Cantidad":1,"Precio":21},
-                {"Producto":"Tomate","Cantidad":1,"Precio":31}]
+    compras = [{"Producto":"Maíz","Cantidad":1,"Precio":13,"PrecioBase":13,"id":0},
+                {"Producto":"Papa","Cantidad":2,"Precio":12,"PrecioBase":12,"id":1},
+                {"Producto":"Pepino","Cantidad":1,"Precio":23,"PrecioBase":23,"id":2},
+                {"Producto":"Pimentón","Cantidad":1,"Precio":21,"PrecioBase":21,"id":3},
+                {"Producto":"Tomate","Cantidad":1,"Precio":31,"PrecioBase":31,"id":4}]
     
     i=0;
-    suma(prod){
-        if(prod == this.compras[this.i].Producto){
-            this.compras[this.i].Cantidad=this.compras[this.i].Cantidad+1;
-            this.compras[this.i].Precio=this.compras[this.i].Precio+this.compras[this.i].Precio;
-        }else if(prod == this.compras[this.i+1].Producto){
-            this.i=this.i+1
-            this.compras[this.i].Cantidad=this.compras[this.i].Cantidad+1;
-            this.compras[this.i].Precio=this.compras[this.i].Precio+this.compras[this.i].Precio;
-        }else if(prod == this.compras[this.i-1].Producto){
-            this.i=this.i-1;
-            this.compras[this.i].Cantidad=this.compras[this.i].Cantidad+1;
-            this.compras[this.i].Precio=this.compras[this.i].Precio+this.compras[this.i].Precio;
-        }
+    suma(id){
+        this.compras[id].Cantidad=this.compras[id].Cantidad+1;
+        this.compras[id].Precio=this.compras[id].Cantidad*this.compras[id].PrecioBase;
     }
-    resta(prod){
-        if(prod == this.compras[this.i].Producto){
-            this.compras[this.i].Cantidad=this.compras[this.i].Cantidad-1;
-            this.compras[this.i].Precio=this.compras[this.i].Precio-this.compras[this.i].Precio;
-        }else if(prod == this.compras[this.i+1].Producto){
-            this.i=this.i+1
-            this.compras[this.i].Cantidad=this.compras[this.i].Cantidad-1;
-            this.compras[this.i].Precio=this.compras[this.i].Precio-this.compras[this.i].Precio;
-        }else if(prod == this.compras[this.i-1].Producto){
-            this.i=this.i-1;
-            this.compras[this.i].Cantidad=this.compras[this.i].Cantidad-1;
-            this.compras[this.i].Precio=this.compras[this.i].Precio-this.compras[this.i].Precio;
-        }
+    
+    resta(id){
+        this.compras[id].Cantidad=this.compras[id].Cantidad-1;
+        this.compras[id].Precio=this.compras[id].Precio-this.compras[this.i].PrecioBase;
     }
    
 
