@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Client } from '../models/client';
 import { Cliente2 } from '../models/cliente2';
 import { User } from '../models/user';
+import { Pedido2 } from '../models/pedido2';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,11 @@ export class ClientService {
   getClienteCedula(cedula:string){
     const url = '/api/Client/Cedula/'+cedula;
     return this.http.get<Cliente2>(url);
+  }
+
+  addPedido(pedido:Pedido2){
+    const url = '/api/Client/agregarPedido';
+    return this.http.post<Pedido2>(url, pedido);
   }
 
 }

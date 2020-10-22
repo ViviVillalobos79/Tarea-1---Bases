@@ -59,7 +59,7 @@ export class TramoProductor {
 
   setInfoProductor(prods:Producto2[]){
     prods.forEach(producto => {
-      var pro = {Producto: producto.nombre, Cantidad: producto.cantidad, Precio: producto.precio};
+      var pro = {"Producto": producto.nombre, "Cantidad": producto.cantidad, "Precio": producto.precio};
       this.productos.push(pro);
     });
 

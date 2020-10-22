@@ -169,5 +169,23 @@ namespace WebApiMarket.Repositorios
 
             return usuario;
         }
+
+        public void AgregarPedido(Pedido2 pedido)
+        {
+            
+            var pedidoNuevo = new Pedido()
+            {
+                num_pedido = pedido.numpedido,
+                monto =pedido.monto,
+                productos = pedido.productos,
+                cantproductos = pedido.cantproductos,
+                numcomprobante = pedido.numcomprobante,
+                cedulacliente = pedido.cedulacliente,
+                entregado = pedido.entregado
+            };
+            
+            db.InsertRecord<Pedido>("Pedidos", pedidoNuevo);
+
+        }
     }
 }

@@ -14,10 +14,10 @@
                   <td>{{ compra.Precio }}</td>
                   <td>
                       <!-- Se tiene funciones para realizar la suma y la resta de los productos-->
-                    <button mat-flat-button (click)="suma(compra.id)" class="mas"> 
-                        <h1> + </h1> 
+                    <button mat-flat-button (click)="suma(compra.id)" class="mas">
+                        <h1> + </h1>
                     </button>
-                    <button mat-flat-button (click)="resta(compra.id)" class="menos"> 
+                    <button mat-flat-button (click)="resta(compra.id)" class="menos">
                         <h1> - </h1>
                     </button>
                 </td>
@@ -25,7 +25,7 @@
               </tbody>
             </table>
             <!-- Se agrega un boton para pasar a la vista del comprobante -->
-            <button mat-flat-button class="pagar" [routerLink]="['/comprobante','Viviana123']">
+            <button mat-flat-button class="pagar" (click)="saveData()" >
                 <h2> Pagar</h2>
             </button>
         </div>

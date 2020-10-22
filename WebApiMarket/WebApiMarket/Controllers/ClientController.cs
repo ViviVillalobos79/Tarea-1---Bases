@@ -45,8 +45,6 @@ namespace WebApiMarket.Controllers
         [HttpPost("agregar")]
         public IActionResult AgregarCliente(Cliente2 nuevoCliente)
         {
-            System.Diagnostics.Debug.WriteLine(nuevoCliente);
-            Console.WriteLine(nuevoCliente);
             RPClientes rpCli = new RPClientes();
             rpCli.Agregar2(nuevoCliente);
             return CreatedAtAction(nameof(AgregarCliente), nuevoCliente);
@@ -78,6 +76,13 @@ namespace WebApiMarket.Controllers
             return Ok(cliente);
         }
 
+        [HttpPost("agregarPedido")]
+        public IActionResult AgregarPedido(Pedido2 nuevoPedido)
+        {
+            RPClientes rpCli = new RPClientes();
+            rpCli.AgregarPedido(nuevoPedido);
+            return CreatedAtAction(nameof(AgregarCliente), nuevoPedido);
+        }
 
 
     }
