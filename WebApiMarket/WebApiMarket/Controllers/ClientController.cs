@@ -61,6 +61,23 @@ namespace WebApiMarket.Controllers
             return Ok(cliente);
         }
 
+        [HttpGet("Cedula/{cedula}")]
+        public IActionResult GetCCedula(string cedula)
+        {
+            RPClientes rpCli = new RPClientes();
+            var clientes = rpCli.getAllClientes();
+            var cliente = new Cliente2();
+            foreach (var rec in clientes)
+            {
+                if (rec.Cedula == cedula)
+                {
+                    cliente = rec;
+                }
+            }
+
+            return Ok(cliente);
+        }
+
 
 
     }

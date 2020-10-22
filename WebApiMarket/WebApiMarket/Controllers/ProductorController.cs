@@ -94,5 +94,50 @@ namespace WebApiMarket.Controllers
         }
 
 
+        [HttpGet("Direccion/{provincia}/{canton}/{distrito}")]
+        public IActionResult GetPDireccion(string provincia, string canton, string distrito)
+        {
+            RPClientes rpCli = new RPClientes();
+            var productores2 = rpCli.getAllProductores();
+            var productores = new List<Productor2> { };
+
+            var direccion = new List<string> {provincia,canton,distrito};
+
+            foreach (var rec in productores2)
+            {
+                if (rec.direccion[0] == provincia)
+                {
+                   if (rec.direccion[1] == canton)
+                    {
+                        if(rec.direccion[2] == distrito)
+                        {
+                            productores.Add(rec);
+                        }
+                    }
+                    
+                }
+            }
+
+            return Ok(productores);
+        }
+
+        [HttpGet("Cedula/{cedula}")]
+        public IActionResult GetPCedula(string cedula)
+        {
+            RPClientes rpCli = new RPClientes();
+            var productores = rpCli.getAllProductores();
+            var productor = new Productor2();
+            foreach (var rec in productores)
+            {
+                if (rec.Cedula == cedula)
+                {
+                    productor = rec;
+                }
+            }
+
+            return Ok(productor);
+        }
+
+
     }
 }

@@ -39,11 +39,6 @@ export class Login{
               protected clientSvc: ClientService,
               private productorService: ProductorServiceService,
               private router: Router,){
-    // this.clientesObservable = this.dataSvc.getClients();
-    // this.dataSvc.getClients().subscribe((res : any[])=>{
-    //   this.USERS_DATA = res;
-    //   console.log(this.USERS_DATA);
-    // });
     this.productorService.getProductores().subscribe((res:Productor2[])=>{
       this.PRODUCTORES_DATA = res;
     });

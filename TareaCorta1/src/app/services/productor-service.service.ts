@@ -26,4 +26,14 @@ export class ProductorServiceService {
     return this.http.get<User>(url);
   }
 
+  getProducDireccion(provincia:string, canton:string, distrito:string){
+    const url = '/api/Productor/Direccion/'+provincia+'/'+canton+'/'+distrito;
+    return this.http.get<Productor2[]>(url);
+  }
+
+  getProducCedula(cedula:string){
+    const url = '/api/Productor/Cedula/'+cedula;
+    return this.http.get<Productor2>(url);
+  }
+
 }

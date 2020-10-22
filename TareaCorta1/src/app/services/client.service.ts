@@ -32,4 +32,9 @@ export class ClientService {
     return this.http.get<User>(url);
   }
 
+  getClienteCedula(cedula:string){
+    const url = '/api/Client/Cedula/'+cedula;
+    return this.http.get<Cliente2>(url);
+  }
+
 }

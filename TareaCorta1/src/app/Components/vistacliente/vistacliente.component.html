@@ -2,18 +2,18 @@
   <img class="logoContainer" mat-card-image src="../../../assets/Images/logo.png">
   <div class="botones">
 
-    <button mat-button class="btnRes" [routerLink]="['/tramos','Viviana123']">
+    <button mat-button class="btnRes" [routerLink]="['/tramos',cedula]">
       <h3>
         Tramos
       </h3>
     </button>
 
-    <button mat-button class="btnRes" [routerLink]="['/carritocompras','Viviana123']">
+    <button mat-button class="btnRes" [routerLink]="['/carritocompras',cedula]">
       <h3>
         Carrito
       </h3>
     </button>
-    
+
     <button mat-button class="btnLog" [routerLink]="'/home'">
       <h3>
         Log out
@@ -36,7 +36,7 @@
     <button mat-flat-button (click)="right()">
       <img src="../../../assets/Images/Polygon 2.png" />
     </button>
-  
+
   </div>
   <div class="dist">
     <h1>Productores en el distrito</h1>
@@ -44,8 +44,8 @@
       <div class="map">
         <img src="../../../assets/Images/image 32.png" />
       </div>
-      <div class="tramos"> 
-        <div *ngFor="let tramo of tramos">
+      <div class="tramos">
+        <div *ngFor="let tramo of tramoes">
           <mat-card class="productor">
               <h3>{{ tramo }} &nbsp;</h3>
               <button mat-button class="btnV" [routerLink]="['/tramoproductor','Viviana123']">
@@ -54,9 +54,9 @@
                   </h3>
               </button>
           </mat-card>
-        </div> 
+        </div>
       </div>
     </div>
-    
+
   </div>
 </div>
