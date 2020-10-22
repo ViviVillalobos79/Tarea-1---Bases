@@ -84,6 +84,14 @@ namespace WebApiMarket.Controllers
             return CreatedAtAction(nameof(AgregarCliente), nuevoPedido);
         }
 
+        [HttpPost("agregarCategoria")]
+        public IActionResult AgregarCategoria(Categoria2 nuevaCategoria)
+        {
+            RPClientes rpCli = new RPClientes();
+            rpCli.AgregarCategoria(nuevaCategoria);
+            return CreatedAtAction(nameof(AgregarCategoria), nuevaCategoria);
+        }
+
 
     }
 }

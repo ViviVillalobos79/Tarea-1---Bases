@@ -7,8 +7,8 @@ namespace WebApiMarket.DB
     {
         [BsonId]
         public Guid Id { get; set; }
-        public int IdCategoria { get; set; }
-        public string Nombre { get; set; }
+        public string idcategoria { get; set; }
+        public string nombre { get; set; }
 
     }
 }

@@ -1,28 +1,30 @@
 <div class="split right">
-    <div class="centered">     
+    <div class="centered">
       <img class="center"  alt="Responsive image" style="width:300px;height:300px;" src="../../../assets/Images/Image5.png">
     </div>
   </div>
-  
+
   <div class="split left">
   <div class="centered">
     <h2>Gestión de Categorías</h2>
-  
+
   <div class="col-md-6 user-container">
-    
+
         <div class="form-group">
           <!--Contenedor para Ingresar ID-->
           <label for="ID"><b>ID</b>:</label>
-          <input placeholder="ID" name="ID" class="form-control" id="ID">
+          <input placeholder="ID" name="ID" class="form-control" id="ID"
+          (change)=idSet($event.target.value)>
         </div>
-       
+
         <div class="form-group">
           <!--Contenedor para Ingresar Nombre Categoria-->
           <label for="Categoria"><b>Categoria</b>:</label>
-          <input placeholder="Categoria" name="Categoria" class="form-control" id="Categoria">
+          <input placeholder="Categoria" name="Categoria" class="form-control" id="Categoria"
+          (change)=nombreSet($event.target.value)>
         </div>
         <!--Boton para Añadir-->
-        <button class="botonagregar" [routerLink]="'/categorias'" >Añadir</button>
+        <button class="botonagregar" (click)= "saveData()" >Añadir</button>
     </div>
 </div>
 </div>

@@ -187,5 +187,18 @@ namespace WebApiMarket.Repositorios
             db.InsertRecord<Pedido>("Pedidos", pedidoNuevo);
 
         }
+
+        public void AgregarCategoria(Categoria2 categoria)
+        {
+
+            var categoria1 = new Categoria()
+            {
+                idcategoria = categoria.idcategoria,
+                nombre = categoria.nombre
+            };
+
+            db.InsertRecord<Categoria>("Categoria", categoria1);
+
+        }
     }
 }

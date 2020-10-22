@@ -1,8 +1,8 @@
 ﻿namespace WebApiMarket.NormalModels
 {
-    class Categoria2
+    public class Categoria2
     {
-        public int IdCategoria { get; set; }
-        public string Nombre { get; set; }
+        public string idcategoria { get; set; }
+        public string nombre { get; set; }
     }
 }

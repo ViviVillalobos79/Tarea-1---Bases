@@ -4,6 +4,7 @@ import { Client } from '../models/client';
 import { Cliente2 } from '../models/cliente2';
 import { User } from '../models/user';
 import { Pedido2 } from '../models/pedido2';
+import { Categoria2 } from '../models/categoria2';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,11 @@ export class ClientService {
   addPedido(pedido:Pedido2){
     const url = '/api/Client/agregarPedido';
     return this.http.post<Pedido2>(url, pedido);
+  }
+
+  addCategoria(categoria:Categoria2){
+    const url = '/api/Client/agregarCategoria';
+    return this.http.post<Categoria2>(url, categoria);
   }
 
 }
