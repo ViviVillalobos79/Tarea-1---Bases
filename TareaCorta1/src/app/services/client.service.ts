@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Client } from '../models/client';
 import { Cliente2 } from '../models/cliente2';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,11 @@ export class ClientService {
 
   addClient(client:Cliente2){
     return this.http.post<Cliente2>( this.clientAddUrl, client);
+  }
+
+  authCliente(username:string, password:string){
+    const url = '/api/Client/Usuario/'+ username + '/' +password;
+    return this.http.get<User>(url);
   }
 
 }

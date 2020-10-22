@@ -82,11 +82,12 @@ namespace WebApiMarket.Controllers
 
             var usuario = new User
             {
-                Cedula = productor.Cedula,
-                Usuario = productor.Usuario,
+                cedula = productor.Cedula,
+                usuario = productor.Usuario,
                 pass = productor.pass,
                 aceptado = productor.aceptado,
-                login = (productor.pass == password)
+                login = (productor.pass == password),
+                rol = "Productor"
             };
 
             return Ok(usuario);

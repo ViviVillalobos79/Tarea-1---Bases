@@ -133,11 +133,12 @@ namespace WebApiMarket.Repositorios
 
             var usuario = new User
             {
-                Cedula = cliente.Cedula,
-                Usuario = cliente.Usuario,
+                cedula = cliente.Cedula,
+                usuario = cliente.Usuario,
                 pass = cliente.pass,
                 aceptado = cliente.aceptado,
-                login = (cliente.pass == password)
+                login = (cliente.pass == password),
+                rol = "Cliente"
             };
 
             return usuario;

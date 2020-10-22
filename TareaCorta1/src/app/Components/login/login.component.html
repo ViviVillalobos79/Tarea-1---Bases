@@ -3,22 +3,31 @@
     <mat-card class="cardLogin">
         <h1 class="text"> Iniciar sesión</h1>
         <mat-card-content class="log">
-            <!-- Se agregan formControls para acceder a la informacaion ingresada por el usuario 
+          <div *ngIf= "eAceptado" >
+            Error usted aun no ha sido aceptado o aun no tiene cuenta
+          </div>
+          <div *ngIf= "eLogin">
+            Error usuario o contraseña no coinciden
+          </div>
+            <!-- Se agregan formControls para acceder a la informacaion ingresada por el usuario
                 por medio de las variables que guardan el valor del form-->
             <mat-form-field appearance="form" class="form">
-                <input matInput type="text" [formControl]="name" ng model = "@username" placeholder="Usuario" required/>
+                <input matInput type="text" [formControl]="name" ng model = "@username" placeholder="Usuario" required
+                (change) = 'setUsername($event.target.value)'/>
             </mat-form-field>
             <mat-form-field appearance="form" class="form">
-                <input matInput type="password" [formControl]="pass" ng model = "@userpassword" placeholder="Contraseña" required/>
+                <input matInput type="password" [formControl]="pass" ng model = "@userpassword" placeholder="Contraseña" required
+                (change) ='passwordSet($event.target.value)'/>
             </mat-form-field>
-            <div class="rol"> 
+            <div class="rol">
                 <label for="rol"><b>Selecciona tu rol</b>:</label>
-                <select class="form-control" formControlName="rol">
+                <select class="form-control" formControlName="rol"
+                (change)="rolSet($event.target.value)">
                 <option value="productor">Productor</option>
                 <option value="cliente">Cliente</option>
                 </select>
             </div>
-            <button mat-button class="btn-login" (click) = "validate()" [routerLink]="['/cliente','Viviana123']"  >
+            <button mat-button class="btn-login" (click) = "validate()"  >
                 <h3>Ingresar</h3>
             </button>
         </mat-card-content>
