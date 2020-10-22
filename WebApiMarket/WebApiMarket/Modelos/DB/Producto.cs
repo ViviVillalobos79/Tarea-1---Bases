@@ -7,13 +7,13 @@ namespace WebApiMarket.DB
     {
         [BsonId]
         public Guid Id { get; set; }
-        public int Num_Producto { get; set; }
+        public string Num_Producto { get; set; }
         public string Nombre { get; set; }
-        public int id_categoria { get; set; }
-        public int Precio { get; set; }
-        public int Cantidad { get; set; }
+        public string id_categoria { get; set; }
+        public string Precio { get; set; }
+        public string Cantidad { get; set; }
         public string Modo_venta { get; set; }
         public bool Disponibilidad { get; set; }
-        public int CedulaProductor { get; set; }
+        public string CedulaProductor { get; set; }
     }
 }

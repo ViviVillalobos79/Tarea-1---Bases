@@ -118,6 +118,32 @@ namespace WebApiMarket.Repositorios
             return productores2;
         }
 
+        public List<Producto2> getAllProductos()
+        {
+            var productos = db.LoadRecords<Producto>("Productos");
+            var productos2 = new List<Producto2> { };
+            foreach (var producto in productos)
+            {
+                var producto2 = new Producto2
+                {
+                    numproducto = producto.Num_Producto,
+                    nombre = producto.Nombre,
+                    idcategoria = producto.id_categoria,
+                    precio = producto.Precio,
+                    cantidad = producto.Cantidad,
+                    modoventa = producto.Modo_venta,
+                    disponibilidad = producto.Disponibilidad,
+                    cedulaproductor = producto.CedulaProductor
+
+                };
+
+                productos2.Add(producto2);
+
+            }
+
+            return productos2;
+        }
+
         public User auth(string username, string password)
         {
             var clientes = getAllClientes();

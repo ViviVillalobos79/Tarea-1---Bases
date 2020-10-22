@@ -20,7 +20,7 @@ import { ContactFormComponent } from './Components/contact-form/contact-form.com
 import { VistaClienteComponent } from './Components/vistacliente/vistacliente.component'
 
 //* en este modulo se importan las vistas para agregarles un nombre de dirección y asignarle un componente
- 
+
 const routes: Routes = [
 {
   path: 'home',
@@ -72,7 +72,7 @@ const routes: Routes = [
   component: Login
 },
 {
-  path: 'tramoproductor/:id',
+  path: 'tramoproductor/:id/:cedula',
   component: TramoProductor
 },
 {
@@ -80,7 +80,7 @@ const routes: Routes = [
   component: VistaClienteComponent
 },
 {
-  path: 'carritocompras/:id',
+  path: 'carritocompras/:id/:cedula',
   component: CarritoCompras
 },
 {

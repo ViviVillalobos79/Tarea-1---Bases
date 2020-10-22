@@ -138,6 +138,74 @@ namespace WebApiMarket.Controllers
             return Ok(productor);
         }
 
+        [HttpGet("Usuario/{usuario}")]
+        public IActionResult GetPUsuario(string usuario)
+        {
+            RPClientes rpCli = new RPClientes();
+            var productores = rpCli.getAllProductores();
+            var productor = new Productor2();
+            foreach (var rec in productores)
+            {
+                if (rec.usuario == usuario)
+                {
+                    productor = rec;
+                }
+            }
+
+            return Ok(productor);
+        }
+
+        [HttpGet("Productos/{usuario}")]
+        public IActionResult GetProductos(string usuario)
+        {
+            RPClientes rpCli = new RPClientes();
+            var productores = rpCli.getAllProductores();
+            var productor = new Productor2();
+
+            var todoProductos = rpCli.getAllProductos();
+
+            var productos = new List<Producto2> { };
+            var productosNum = new List<int> { };
+            foreach (var rec in productores)
+            {
+                if (rec.usuario == usuario)
+                {
+                    productor = rec;
+                    productosNum = rec.productos;
+                }
+            }
+
+            foreach (var pro in todoProductos)
+            {
+                if (productosNum.Contains(int.Parse(pro.numproducto)))
+                {
+                    productos.Add(pro);
+                }
+            }
+
+            return Ok(productos);
+
+        }
+
+        [HttpPost("agregarProducto")]
+        public IActionResult AgregarProducto(Producto2 nuevoProducto)
+        {
+            var producto = new Producto()
+            {
+                Num_Producto = nuevoProducto.numproducto,
+                Nombre = nuevoProducto.nombre,
+                id_categoria = nuevoProducto.idcategoria,
+                Precio = nuevoProducto.precio,
+                Cantidad = nuevoProducto.cantidad,
+                Modo_venta = nuevoProducto.modoventa,
+                Disponibilidad = nuevoProducto.disponibilidad,
+                CedulaProductor = nuevoProducto.cedulaproductor
+
+            };
+            db.InsertRecord<Producto>("Productos", producto);
+            return CreatedAtAction(nameof(AgregarProducto), nuevoProducto);
+        }
+
 
     }
 }

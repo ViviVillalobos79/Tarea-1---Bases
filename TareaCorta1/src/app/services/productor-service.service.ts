@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Producto2 } from '../models/producto2';
 import { Productor2 } from '../models/productor2';
 import { User} from '../models/user';
 
@@ -34,6 +35,16 @@ export class ProductorServiceService {
   getProducCedula(cedula:string){
     const url = '/api/Productor/Cedula/'+cedula;
     return this.http.get<Productor2>(url);
+  }
+
+  getProducUsuario(usuario:string){
+    const url = '/api/Productor/Usuario/'+usuario;
+    return this.http.get<Productor2>(url);
+  }
+
+  getProductos(usuario:string){
+    const url = '/api/Productor/Productos/'+usuario;
+    return this.http.get<Producto2[]>(url);
   }
 
 }
