@@ -98,9 +98,9 @@ namespace WebApiMarket.Repositorios
             {
                 var productor2 = new Productor2
                 {
-                    Cedula = productor.Cedula.ToString(),
-                    Usuario = productor.Usuario,
-                    Nombre = productor.Nombre,
+                    cedula = productor.Cedula.ToString(),
+                    usuario = productor.Usuario,
+                    nombre = productor.Nombre,
                     direccion = productor.direccion,
                     dob = productor.dob,
                     telefono = productor.telefono.ToString(),

@@ -131,9 +131,9 @@ export class ContactFormComponent {
   generateProductor(){
     let productor2 = new Productor2();
 
-    productor2.Cedula = this.cedulaA;
-    productor2.Usuario = this.username;
-    productor2.Nombre = [this.nombre, this.apellido1, this.apellido2];
+    productor2.cedula = this.cedulaA;
+    productor2.usuario = this.username;
+    productor2.nombre = [this.nombre, this.apellido1, this.apellido2];
     productor2.direccion = [this.selectedProvinciaA.name,
                           this.selectedCantonA.name,
                           this.selectedDistritoA.name];

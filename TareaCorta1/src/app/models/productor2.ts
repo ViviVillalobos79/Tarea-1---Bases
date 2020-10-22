@@ -1,7 +1,7 @@
 export class Productor2{
-  Cedula : string;
-  Usuario:string;
-  Nombre:string[];
+  cedula : string;
+  usuario:string;
+  nombre:string[];
   direccion:string[];
   dob:number[];
   telefono:string;

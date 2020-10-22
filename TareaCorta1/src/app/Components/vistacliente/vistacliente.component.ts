@@ -13,8 +13,8 @@ import {ProductorServiceService} from '../../services/productor-service.service'
 })
 export class VistaClienteComponent {
   tramos = ['Productor 1', 'Productor 2', 'Productor 3', 'Produ'];
-  tramoes:string[];
-  tramoesC:string[];
+  tramoes = []
+  tramoesC = []
   i = 0;
   img = [
     '../../../assets/Images/Image1.png',
@@ -52,16 +52,14 @@ export class VistaClienteComponent {
       cliente.direccion[2]).subscribe((res: Productor2[]) => {
         this.productoresA = res;
         console.log(this.productoresA);
+        this.setTramos(res);
       });
   }
 
 
-
   setTramos(productores:Productor2[]){
     productores.forEach(element => {
-      //this.tramoes.push(element.Nombre);
-
-
+      this.tramoes.push(element.usuario);
     });
   }
 

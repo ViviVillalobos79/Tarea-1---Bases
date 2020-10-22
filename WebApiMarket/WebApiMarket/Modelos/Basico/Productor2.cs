@@ -7,9 +7,9 @@ namespace WebApiMarket.NormalModels
 {
     public class Productor2
     {
-        public string Cedula { get; set; }
-        public string Usuario { get; set; }
-        public List<string> Nombre { get; set; } //[Nombre, Apellido1, Apellido2]
+        public string cedula { get; set; }
+        public string usuario { get; set; }
+        public List<string> nombre { get; set; } //[Nombre, Apellido1, Apellido2]
         public List<string> direccion { get; set; } //[Provincia, Cantón, Distrito]
         public List<int> dob { get; set; } //[Dia, Mes, Año]
         public string telefono { get; set; }

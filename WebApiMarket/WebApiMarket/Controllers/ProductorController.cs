@@ -23,9 +23,9 @@ namespace WebApiMarket.Controllers
             {
                 var productor2 = new Productor2
                 {
-                    Cedula = productor.Cedula.ToString(),
-                    Usuario = productor.Usuario,
-                    Nombre = productor.Nombre,
+                    cedula = productor.Cedula.ToString(),
+                    usuario = productor.Usuario,
+                    nombre = productor.Nombre,
                     direccion = productor.direccion,
                     dob = productor.dob,
                     telefono = productor.telefono.ToString(),
@@ -48,9 +48,9 @@ namespace WebApiMarket.Controllers
         {
             var productor = new Productor()
             {
-                Cedula = int.Parse(nuevoProductor.Cedula),
-                Usuario = nuevoProductor.Usuario,
-                Nombre = nuevoProductor.Nombre,
+                Cedula = int.Parse(nuevoProductor.cedula),
+                Usuario = nuevoProductor.usuario,
+                Nombre = nuevoProductor.nombre,
                 direccion = nuevoProductor.direccion,
                 dob = nuevoProductor.dob,
                 telefono = int.Parse(nuevoProductor.telefono),
@@ -73,7 +73,7 @@ namespace WebApiMarket.Controllers
             var productor = new Productor2();
             foreach (var rec in productores2)
             {
-                if (rec.Usuario == username)
+                if (rec.usuario == username)
                 {
                     productor = rec;
 
@@ -82,8 +82,8 @@ namespace WebApiMarket.Controllers
 
             var usuario = new User
             {
-                cedula = productor.Cedula,
-                usuario = productor.Usuario,
+                cedula = productor.cedula,
+                usuario = productor.usuario,
                 pass = productor.pass,
                 aceptado = productor.aceptado,
                 login = (productor.pass == password),
@@ -129,7 +129,7 @@ namespace WebApiMarket.Controllers
             var productor = new Productor2();
             foreach (var rec in productores)
             {
-                if (rec.Cedula == cedula)
+                if (rec.cedula == cedula)
                 {
                     productor = rec;
                 }
